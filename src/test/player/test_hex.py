@@ -52,12 +52,15 @@ def play(player_white, player_black, move_time=2.5):
     move = None
 
     while not gm.finished():
+        print("Current board =================================================")
         match_info.print_board(gm.sm) 
         move = gm.play_single_move(last_move=move) 
 
         print(type(move))
         print(dir(move))
         print(move)
+
+        print("END ===============================================================")
 
     gm.finalise_match(move)
     match_info.print_board(gm.sm) 
