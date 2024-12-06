@@ -38,7 +38,7 @@ def setup():
         network = man.create_new_network(GAME)
         man.save_network(network, MODEL_BLACK)
 
-def play(player_white, player_black, move_time=10):
+def play(player_white, player_black, move_time=2.5):
     """Play a game between two players and export the game data."""
     gm = GameMaster(lookup.by_name(GAME), verbose=True)
     gm.add_player(player_white, "white")
@@ -52,8 +52,8 @@ def play(player_white, player_black, move_time=10):
     move = None
 
     while not gm.finished():
-        move = gm.play_single_move(last_move=move) 
         match_info.print_board(gm.sm) 
+        move = gm.play_single_move(last_move=move) 
         
     gm.finalise_match(move)
 
