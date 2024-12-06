@@ -38,7 +38,9 @@ def parse_moves(move_string):
             parts = segment.split('.')
             if len(parts) == 3:
                 player, x, y = parts
-                
+                print(segment)
+                print(player, x, y)
+
                 #Is black player
                 if player == "RED":
                     newMove = ('(place ' + y + ' ' + (str)(x) + ')', 'noop')
