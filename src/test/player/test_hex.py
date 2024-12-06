@@ -57,6 +57,7 @@ def play(player_white, player_black, move_time=2.5):
 
         print(type(move))
         print(dir(move))
+        print(move)
 
     gm.finalise_match(move)
     match_info.print_board(gm.sm) 
