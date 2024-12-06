@@ -3,6 +3,7 @@ import sys
 from ggplib.player.gamemaster import GameMaster
 from ggplib.db import lookup
 from ggplib.player import get
+from ggplib.util import log
 from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo to print the board
 
 from ggpzero.nn.manager import get_manager
@@ -68,7 +69,13 @@ def sort_moves(moves, blackFirst=True):
 
     # Sort the moves array according to the fixed pattern
     sorted_moves = sorted(enumerate(moves), key=lambda x: sorting_key(x[0]))
-    return [move for _, move in sorted_moves]
+    moves = [move for _, move in sorted_moves]
+
+    for i in range(len(moves)):
+        if moves[i][0] != 'noop':
+            moves[i] = ('noop', moves[i][0])
+
+    return moves
 
 
 def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
