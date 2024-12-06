@@ -7,7 +7,7 @@ from ggpzero.util import attrutil
 from ggpzero.defs import confs, templates
 from ggpzero.nn.manager import get_manager
 from ggpzero.player.puctplayer import PUCTPlayer
-from ggpzero.battle.hex import MatchInfo  # Import MatchInfo instead of print_board
+from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo instead of print_board
 
 BOARD_SIZE = 11
 GAME = "hex_lg_11"
