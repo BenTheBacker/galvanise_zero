@@ -40,7 +40,7 @@ def setup():
 
 def play(player_white, player_black, move_time=2.5):
     """Play a game between two players and export the game data."""
-    gm = GameMaster(lookup.by_name(GAME), verbose=True)
+    gm = GameMaster(lookup.by_name(GAME), verbose=False)
     gm.add_player(player_white, "white")
     gm.add_player(player_black, "black")
 
@@ -75,33 +75,6 @@ def play(player_white, player_black, move_time=2.5):
 
     gm.finalise_match(move)
     match_info.print_board(gm.sm) 
-
-def determine_result(scores):
-    """
-    Determine the game result based on final scores.
-
-    Args:
-        scores (dict): A dictionary mapping roles to their final scores.
-
-    Returns:
-        str: The winning role ("white" or "black") or "draw".
-    """
-    if not scores:
-        return "unknown"
-
-    roles = list(scores.keys())
-    if len(roles) != 2:
-        return "invalid"  # Handle unexpected number of roles
-
-    role1, role2 = roles
-    score1, score2 = scores[role1], scores[role2]
-
-    if score1 > score2:
-        return role1.upper()  # "WHITE" or "BLACK"
-    elif score2 > score1:
-        return role2.upper()
-    else:
-        return "DRAW"
 
 
 def play_b1_vs_h1():

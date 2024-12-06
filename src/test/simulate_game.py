@@ -35,21 +35,38 @@ def parse_moves(move_string):
             parts = segment.split('.')
             if len(parts) == 3:
                 player, x, y = parts
-                moves.append({"player": player, "x": x, "y": int(y)})
+                
+                #Is black player
+                if player == "RED":
+                    newMove = ('(place ' + y + ' ' + (str)(x) + ')', 'noop')
+                else:
+                    newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
+
+                moves.append(newMove)
 
     return moves
 
+def sort_moves(moves, blackFirst=True):
+    if not moves:
+        return []
+
+    # Determine the starting position based on blackFirst
+    if blackFirst:
+        pattern = [1, 0]  # Black (noop at index 1 first), then alternate
+    else:
+        pattern = [0, 1]  # Red (noop at index 0 first), then alternate
+
+    # Create a function to determine the sorting key
+    def sorting_key(index):
+        # Use the alternation pattern to determine expected noop index
+        return pattern[index % 2]
+
+    # Sort the moves array according to the fixed pattern
+    sorted_moves = sorted(enumerate(moves), key=lambda x: sorting_key(x[0]))
+    return [move for _, move in sorted_moves]
+
+
 def reconstruct_game(moves, board_size=BOARD_SIZE):
-    """
-    Reconstruct the game state from a list of moves and print the board.
-
-    Args:
-        moves (list of dict): List of moves, e.g., [{"player": "RED", "x": "a", "y": 1}, ...].
-        board_size (int): The size of the Hex board.
-
-    Returns:
-        None
-    """
     # Initialize GameMaster
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
 
@@ -60,10 +77,9 @@ def reconstruct_game(moves, board_size=BOARD_SIZE):
     gm.start(meta_time=15, move_time=0.5)
 
     # Replay the moves
+    lastMove = None
     for move in moves:
-        role = "white" if move["player"] == "RED" else "black"
-        move_str = f"{move['x']}{move['y']}"  # Format move as "a1", "b2", etc.
-        gm.play_forced_move(move_str=move_str, role=role)
+        lastMove = gm.play_forced_move(move, lastMove)
 
     # Print the final reconstructed board
     match_info.print_board(gm.sm)
@@ -82,6 +98,7 @@ if __name__ == "__main__":
 
     # Parse the move string into a list of moves
     moves = parse_moves(move_string)
+    moves = sort_moves(moves)
 
     # Reconstruct and display the game state
     reconstruct_game(moves)
