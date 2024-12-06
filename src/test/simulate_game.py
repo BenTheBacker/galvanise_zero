@@ -105,10 +105,10 @@ def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
         current_role = role_order[i % len(role_order)]
 
         # Set the forced move for the current role
-        gm.set_forced_move(current_role, move)
+        gm.set_forced_move(current_role, move[1])
 
         if gm.verbose:
-            log.info(f"Reconstructing move {i + 1}: Role '{current_role}' plays '{move}'")
+            log.info(f"Reconstructing move +"(str)(i + 1)+": Role " + current_role + "plays " + move[1])
 
         # Execute the move by playing a single move
         lastMove = gm.play_single_move(lastMove)
