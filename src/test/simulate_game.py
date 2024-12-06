@@ -30,12 +30,12 @@ def parse_moves(move_string):
     moves = []
 
     # Split the string by periods
-    move_segments = move_string.split(':')
+    move_segments = move_string.split('.')
 
     for segment in move_segments:
         if segment:  # Skip empty segments
 
-            parts = segment.split('.')
+            parts = segment.split(':')
             if len(parts) == 3:
                 player, x, y = parts
                 print(segment)
