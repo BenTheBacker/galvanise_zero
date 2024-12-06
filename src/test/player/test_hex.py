@@ -96,7 +96,7 @@ def determine_result(scores):
 def play_b1_vs_h1():
     """Set up and play a game between b1_173 and h1_141."""
     # Define evaluation configuration for b1_173
-    eval_config_white = templates.base_puct_config(verbose=True, max_dump_depth=1)
+    eval_config_white = templates.base_puct_config(verbose=False, max_dump_depth=1)
     puct_config_white = confs.PUCTPlayerConfig(
         "gzero",
         True,
@@ -107,7 +107,7 @@ def play_b1_vs_h1():
     )
 
     # Define evaluation configuration for h1_141
-    eval_config_black = templates.base_puct_config(verbose=True, max_dump_depth=1)
+    eval_config_black = templates.base_puct_config(verbose=False, max_dump_depth=1)
     puct_config_black = confs.PUCTPlayerConfig(
         "gzero",
         True,
