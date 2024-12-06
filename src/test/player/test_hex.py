@@ -50,32 +50,16 @@ def play(player_white, player_black, move_time=0.5):
     gm.start(meta_time=15, move_time=move_time)
 
     move = None
-    sgf_moves = []  # List to store moves for export
 
     while not gm.finished():
         match_info.print_board(gm.sm)  # Use the print_board method
         move = gm.play_single_move(last_move=move)
         
         if move is not None:
-            # Extract move details
-            role = move.role  # "white" or "black"
-            move_action = move.action  # The move itself, e.g., "B3"
-            
-            # Determine role index
-            role_index = 0 if role == "black" else 1  # Assuming 0: black, 1: white
-            
-            # Append the move to sgf_moves
-            sgf_moves.append((role_index, move_action))
+            move = gm.play_single_move(last_move=move)
+            print("Move: %s" % move)
 
     gm.finalise_match(move)
-
-    # Retrieve game result by processing gm.scores
-    result = determine_result(gm.scores)
-
-    # Export the game data
-    players = (player_white, player_black)
-    match_info.export(players, sgf_moves, BOARD_SIZE, result)
-
 
 def determine_result(scores):
     """
