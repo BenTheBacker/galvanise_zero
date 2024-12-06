@@ -56,6 +56,7 @@ def play(player_white, player_black, move_time=2.5):
         move = gm.play_single_move(last_move=move) 
         
     gm.finalise_match(move)
+    match_info.print_board(gm.sm) 
 
 def determine_result(scores):
     """
