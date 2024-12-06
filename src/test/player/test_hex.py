@@ -71,7 +71,7 @@ def play(player_white, player_black, move_time=2.5):
                 player = "black"
                 movement = move[0]
 
-        print(f"Player: {player}, Movement: {movement}")
+        print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
 
         print("END ===============================================================")
 
