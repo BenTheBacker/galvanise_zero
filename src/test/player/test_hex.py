@@ -56,10 +56,6 @@ def play(player_white, player_black, move_time=2.5):
         match_info.print_board(gm.sm) 
         move = gm.play_single_move(last_move=move) 
 
-        print(type(move))
-        print(dir(move))
-        print(move)
-
         player = None
         movement = None
 
@@ -72,6 +68,8 @@ def play(player_white, player_black, move_time=2.5):
                 movement = move[0]
 
         print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
+        print(type(movement))
+        print(dir(movement))
 
         print("END ===============================================================")
 
