@@ -52,13 +52,9 @@ def play(player_white, player_black, move_time=0.5):
     move = None
 
     while not gm.finished():
-        match_info.print_board(gm.sm)  # Use the print_board method
-        move = gm.play_single_move(last_move=move)
+        move = gm.play_single_move(last_move=move) 
+        match_info.print_board(gm.sm) 
         
-        if move is not None:
-            move = gm.play_single_move(last_move=move)
-            print("Move: %s" % move)
-
     gm.finalise_match(move)
 
 def determine_result(scores):
