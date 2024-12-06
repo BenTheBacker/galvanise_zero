@@ -87,6 +87,7 @@ def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
     lastMove = None
     for move in moves:
         lastMove = gm.play_forced_move(move, lastMove)
+        match_info.print_board(gm.sm)
 
     # Print the final reconstructed board
     match_info.print_board(gm.sm)
