@@ -104,6 +104,7 @@ if __name__ == "__main__":
     move_string = sys.argv[1]
 
     # Parse the move string into a list of moves
+    print("Move string: ", move_string) 
     moves = parse_moves(move_string)
     moves = sort_moves(moves)
 
