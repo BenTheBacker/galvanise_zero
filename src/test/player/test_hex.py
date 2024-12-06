@@ -39,7 +39,7 @@ def setup():
         man.save_network(network, MODEL_BLACK)
 
 def play(player_white, player_black, move_time=0.5):
-    """Play a game between two players."""
+    """Play a game between two players and export the game data."""
     gm = GameMaster(lookup.by_name(GAME), verbose=True)
     gm.add_player(player_white, "white")
     gm.add_player(player_black, "black")
@@ -50,11 +50,60 @@ def play(player_white, player_black, move_time=0.5):
     gm.start(meta_time=15, move_time=move_time)
 
     move = None
+    sgf_moves = []  # List to store moves for export
+
     while not gm.finished():
         match_info.print_board(gm.sm)  # Use the print_board method
         move = gm.play_single_move(last_move=move)
+        
+        if move is not None:
+            # Extract move details
+            role = move.role  # "white" or "black"
+            move_action = move.action  # The move itself, e.g., "B3"
+            
+            # Determine role index
+            role_index = 0 if role == "black" else 1  # Assuming 0: black, 1: white
+            
+            # Append the move to sgf_moves
+            sgf_moves.append((role_index, move_action))
 
     gm.finalise_match(move)
+
+    # Retrieve game result by processing gm.scores
+    result = determine_result(gm.scores)
+
+    # Export the game data
+    players = (player_white, player_black)
+    match_info.export(players, sgf_moves, BOARD_SIZE, result)
+
+
+def determine_result(scores):
+    """
+    Determine the game result based on final scores.
+
+    Args:
+        scores (dict): A dictionary mapping roles to their final scores.
+
+    Returns:
+        str: The winning role ("white" or "black") or "draw".
+    """
+    if not scores:
+        return "unknown"
+
+    roles = list(scores.keys())
+    if len(roles) != 2:
+        return "invalid"  # Handle unexpected number of roles
+
+    role1, role2 = roles
+    score1, score2 = scores[role1], scores[role2]
+
+    if score1 > score2:
+        return role1.upper()  # "WHITE" or "BLACK"
+    elif score2 > score1:
+        return role2.upper()
+    else:
+        return "DRAW"
+
 
 def play_b1_vs_h1():
     """Set up and play a game between b1_173 and h1_141."""
