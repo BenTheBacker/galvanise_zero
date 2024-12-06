@@ -2,7 +2,10 @@ import os
 import sys
 from ggplib.player.gamemaster import GameMaster
 from ggplib.db import lookup
+from ggplib.player import get
 from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo to print the board
+
+from ggpzero.nn.manager import get_manager
 
 BOARD_SIZE = 11
 GAME = "hex_lg_11"
@@ -22,6 +25,11 @@ def setup():
 
     import numpy as np
     np.set_printoptions(threshold=100000)
+
+    man = get_manager()
+    if not man.can_load(GAME, RANDOM_GEN):
+        network = man.create_new_network(GAME)
+        man.save_network(network, RANDOM_GEN)
 
 def parse_moves(move_string):
     moves = []
@@ -66,9 +74,11 @@ def sort_moves(moves, blackFirst=True):
     return [move for _, move in sorted_moves]
 
 
-def reconstruct_game(moves, board_size=BOARD_SIZE):
+def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
     # Initialize GameMaster
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
+    gm.add_player(player_white, "white")
+    gm.add_player(player_black, "black")
 
     # Create MatchInfo to track and print the board
     match_info = MatchInfo(board_size)
@@ -100,5 +110,7 @@ if __name__ == "__main__":
     moves = parse_moves(move_string)
     moves = sort_moves(moves)
 
+    print("Moves: ", moves)
+
     # Reconstruct and display the game state
-    reconstruct_game(moves)
+    reconstruct_game(get.get_player("simplemcts"), get.get_player("simplemcts"), moves)
