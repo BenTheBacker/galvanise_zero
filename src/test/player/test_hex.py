@@ -60,6 +60,19 @@ def play(player_white, player_black, move_time=2.5):
         print(dir(move))
         print(move)
 
+        player = None
+        movement = None
+
+        if move is not None:
+            if move[0] == 'noop':
+                player = "white"
+                movement = move[1]
+            else:
+                player = "black"
+                movement = move[0]
+
+        print(f"Player: {player}, Movement: {movement}")
+
         print("END ===============================================================")
 
     gm.finalise_match(move)
