@@ -26,11 +26,6 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
-    man = get_manager()
-    if not man.can_load(GAME, RANDOM_GEN):
-        network = man.create_new_network(GAME)
-        man.save_network(network, RANDOM_GEN)
-
 def parse_moves(move_string):
     moves = []
 
