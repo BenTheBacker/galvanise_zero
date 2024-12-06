@@ -83,10 +83,33 @@ def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
     # Start the game
     gm.start(meta_time=15, move_time=0.5)
 
+    # Retrieve the roles in the order defined by the state machine
+    roles = gm.sm.get_roles()
+    if len(roles) != 2:
+        raise ValueError("This function is designed for two-player games.")
+
+    # Determine the order of roles (assuming roles[0] is 'white' and roles[1] is 'black')
+    role_order = roles  # Typically ['white', 'black']
+
     # Replay the moves
     lastMove = None
-    for move in moves:
-        lastMove = gm.play_forced_move(move, lastMove)
+    for i, move in enumerate(moves):
+        # Determine which role's turn it is
+        current_role = role_order[i % len(role_order)]
+
+        # Set the forced move for the current role
+        gm.set_forced_move(current_role, move)
+
+        if gm.verbose:
+            log.info(f"Reconstructing move {i + 1}: Role '{current_role}' plays '{move}'")
+
+        # Execute the move by playing a single move
+        lastMove = gm.play_single_move(lastMove)
+
+        # Clear the forced move after it's been used
+        gm.clear_forced_move(current_role)
+
+        # Print the board state after the move
         match_info.print_board(gm.sm)
 
     # Print the final reconstructed board
