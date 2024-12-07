@@ -149,45 +149,27 @@ def GetModels():
 
     return player_white, player_black
 
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-@app.route('/next_move', methods=['POST'])
-def next_move():
-    data = request.get_json()
-    time = data.get('time')
-    moves = data.get('moves')
-    # Call your functions here
-    player1, player2 = GetModels()
-    move = GetNextMove(player1, player2, parse_moves(moves), time)
-    return jsonify({"move": move})
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # Ensure setup is called
     setup()
-    app.run(host='0.0.0.0', port=5000)
 
-# if __name__ == "__main__":
-#     # Ensure setup is called
-#     setup()
+    # Parse the moves from the system argument
+    if len(sys.argv) < 3:
+        print("Usage: python reconstruct_game.py <time> '<moves>'")
+        print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
+        sys.exit(1)
 
-#     # Parse the moves from the system argument
-#     if len(sys.argv) < 3:
-#         print("Usage: python reconstruct_game.py <time> '<moves>'")
-#         print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
-#         sys.exit(1)
-
-#     moveTime = (float)(sys.argv[1])
-#     move_string = sys.argv[2]
+    moveTime = (float)(sys.argv[1])
+    move_string = sys.argv[2]
     
-#     # Parse the move string into a list of moves
-#     #print("Move string: ", move_string) 
-#     moves = parse_moves(move_string)
+    # Parse the move string into a list of moves
+    #print("Move string: ", move_string) 
+    moves = parse_moves(move_string)
 
-#     #print("Moves: ", moves)
+    #print("Moves: ", moves)
 
-#     # Reconstruct and display the game state
-#     player1, player2 = GetModels()
-#     move = GetNextMove(player1, player2, moves, moveTime)
+    # Reconstruct and display the game state
+    player1, player2 = GetModels()
+    move = GetNextMove(player1, player2, moves, moveTime)
 
-#     print("Next Move:", move)
+    print("Next Move:", move)
