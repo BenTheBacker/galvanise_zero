@@ -69,8 +69,8 @@ def ParseMoves(moveString):
 def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE):
     # Initialize GameMaster
     gameMaster = GameMaster(lookup.by_name(GAME), verbose=False)
-    gameMaster.add_player(player_white, "Vertical")
-    gameMaster.add_player(player_black, "Horizontal")
+    gameMaster.add_player(player_white, "white")
+    gameMaster.add_player(player_black, "black")
 
     # Create MatchInfo to track and print the board
     matchInfo = MatchInfo(board_size)
