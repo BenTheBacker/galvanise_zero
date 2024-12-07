@@ -66,7 +66,7 @@ def ParseMoves(moveString):
 
 
 
-def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE):
+def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE, displayBoard = False):
     # Initialize GameMaster
     gameMaster = GameMaster(lookup.by_name(GAME), verbose=False)
     gameMaster.add_player(player_white, "white")
@@ -105,11 +105,13 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
         gameMaster.clear_forced_move(current_role)
 
     # Print the final reconstructed board
-    matchInfo.print_board(gameMaster.sm)
+    if displayBoard:
+        matchInfo.print_board(gameMaster.sm)
     
     #Predict the final move:
     lastMove = gameMaster.play_single_move(lastMove)
-    matchInfo.print_board(gameMaster.sm)
+    if displayBoard:
+        matchInfo.print_board(gameMaster.sm)
 
     return lastMove
 
@@ -146,13 +148,14 @@ if __name__ == "__main__":
     setup()
 
     # Parse the moves from the system argument
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 4:
         print("Usage: python reconstruct_game.py <time> '<moves>'")
-        print("Example: python reconstruct_game.py 10 'V:1:a.H:99:z.V:1:b....'")
+        print("Example: python reconstruct_game.py F 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
-    moveTime = (float)(sys.argv[1])
-    move_string = sys.argv[2]
+    displayBoard = (sys.argv[1] == 'T')
+    moveTime = (float)(sys.argv[2])
+    move_string = sys.argv[3]
     
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
