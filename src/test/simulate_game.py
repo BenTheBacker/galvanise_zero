@@ -166,7 +166,7 @@ if __name__ == "__main__":
     #print("Move string: ", move_string) 
     moves = parse_moves(move_string)
 
-    print("Moves: ", moves)
+    #print("Moves: ", moves)
 
     # Reconstruct and display the game state
     player1, player2 = GetModels()
