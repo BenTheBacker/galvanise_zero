@@ -5,11 +5,13 @@ from ggplib.db import lookup
 from ggplib.player import get
 from ggplib.util import log
 from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo to print the board
-
+from ggpzero.defs import confs, templates
 from ggpzero.nn.manager import get_manager
+from ggpzero.player.puctplayer import PUCTPlayer
 
 BOARD_SIZE = 11
 GAME = "hex_lg_11"
+MODEL = "b1_173"
 
 def setup():
     """Initialize the environment."""
@@ -72,7 +74,7 @@ def parse_moves(move_string):
 #     return moves
 
 
-def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
+def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE):
     # Initialize GameMaster
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
     gm.add_player(player_white, "white")
@@ -82,7 +84,7 @@ def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
     match_info = MatchInfo(board_size)
 
     # Start the game
-    gm.start(meta_time=15, move_time=0.5)
+    gm.start(meta_time=15, move_time=moveTime)
 
     # Retrieve the roles in the order defined by the state machine
     roles = gm.sm.get_roles()
@@ -110,23 +112,53 @@ def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
         # Clear the forced move after it's been used
         gm.clear_forced_move(current_role)
 
-        # Print the board state after the move
-        match_info.print_board(gm.sm)
-
     # Print the final reconstructed board
     match_info.print_board(gm.sm)
+    
+    #Predict the final move:
+    lastMove = gm.play_single_move(lastMove)
+    match_info.print_board(gm.sm)
+
+    return lastMove
+
+def GetModels():
+    eval_config_white = templates.base_puct_config(verbose=False, max_dump_depth=1)
+    puct_config_white = confs.PUCTPlayerConfig(
+        "gzero",
+        True,
+        800,
+        0,
+        MODEL,
+        eval_config_white
+    )
+
+    # Define evaluation configuration for h1_141
+    eval_config_black = templates.base_puct_config(verbose=False, max_dump_depth=1)
+    puct_config_black = confs.PUCTPlayerConfig(
+        "gzero",
+        True,
+        800,
+        0,
+        MODEL,
+        eval_config_black
+    )
+
+    # Create players
+    player_white = PUCTPlayer(puct_config_white)  # b1_173
+    player_black = PUCTPlayer(puct_config_black)  # h1_141
 
 if __name__ == "__main__":
     # Ensure setup is called
     setup()
 
     # Parse the moves from the system argument
-    if len(sys.argv) < 2:
-        print("Usage: python reconstruct_game.py '<moves>'")
-        print("Example: python reconstruct_game.py 'RED.1.a:BLUE.2.b:RED.3.c:...'")
+    if len(sys.argv) < 3:
+        print("Usage: python reconstruct_game.py <time> '<moves>'")
+        print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
         sys.exit(1)
 
     move_string = sys.argv[1]
+    moveTime = sys.argv[2]
 
     # Parse the move string into a list of moves
     print("Move string: ", move_string) 
@@ -135,4 +167,5 @@ if __name__ == "__main__":
     print("Moves: ", moves)
 
     # Reconstruct and display the game state
-    reconstruct_game(get.get_player("simplemcts"), get.get_player("simplemcts"), moves)
+    player1, player2 = GetModels()
+    GetNextMove(player1, player2, moves, sys.argv[1])
