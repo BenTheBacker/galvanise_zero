@@ -144,8 +144,10 @@ def GetModels():
     )
 
     # Create players
-    player_white = PUCTPlayer(puct_config_white)  # b1_173
-    player_black = PUCTPlayer(puct_config_black)  # h1_141
+    player_white = PUCTPlayer(puct_config_white)
+    player_black = PUCTPlayer(puct_config_black)  
+
+    return player_white, player_black
 
 if __name__ == "__main__":
     # Ensure setup is called
@@ -157,9 +159,9 @@ if __name__ == "__main__":
         print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
         sys.exit(1)
 
-    move_string = sys.argv[1]
-    moveTime = sys.argv[2]
-
+    moveTime = sys.argv[1]
+    move_string = sys.argv[2]
+    
     # Parse the move string into a list of moves
     print("Move string: ", move_string) 
     moves = parse_moves(move_string)
@@ -168,4 +170,4 @@ if __name__ == "__main__":
 
     # Reconstruct and display the game state
     player1, player2 = GetModels()
-    GetNextMove(player1, player2, moves, sys.argv[1])
+    GetNextMove(player1, player2, moves, moveTime)
