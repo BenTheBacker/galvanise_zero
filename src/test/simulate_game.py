@@ -156,7 +156,7 @@ if __name__ == "__main__":
     # Parse the moves from the system argument
     if len(sys.argv) < 3:
         print("Usage: python reconstruct_game.py <time> '<moves>'")
-        print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
+        print("Example: python reconstruct_game.py 10 'RED:1:a.BLUE:2:b.RED:3:c:...'")
         sys.exit(1)
 
     moveTime = (float)(sys.argv[1])
@@ -166,7 +166,7 @@ if __name__ == "__main__":
     #print("Move string: ", move_string) 
     moves = parse_moves(move_string)
 
-    #print("Moves: ", moves)
+    print("Moves: ", moves)
 
     # Reconstruct and display the game state
     player1, player2 = GetModels()
