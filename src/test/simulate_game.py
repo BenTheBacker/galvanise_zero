@@ -159,7 +159,7 @@ if __name__ == "__main__":
         print("Example: python reconstruct_game.py 10 'RED.1.a:BLUE.2.b:RED.3.c:...'")
         sys.exit(1)
 
-    moveTime = sys.argv[1]
+    moveTime = (float)(sys.argv[1])
     move_string = sys.argv[2]
     
     # Parse the move string into a list of moves
