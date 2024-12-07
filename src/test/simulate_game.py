@@ -54,7 +54,7 @@ def ParseMoves(moveString):
 
                 #Swap move was performed
                 if y == 'z':
-                    newMove = ('noop', '(swap)')
+                    newMove = ('noop', 'swap')
                 else:
                     x = (str)(x)
 
