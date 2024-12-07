@@ -39,43 +39,37 @@ def parse_moves(move_string):
             parts = segment.split(':')
             if len(parts) == 3:
                 player, x, y = parts
-                print(segment)
-                print(player, x, y)
 
-                #Is black player
-                if player == "RED":
-                    newMove = ('(place ' + y + ' ' + (str)(x) + ')', 'noop')
-                else:
-                    newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
+                newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
 
                 moves.append(newMove)
 
     return moves
 
-def sort_moves(moves, blackFirst=True):
-    if not moves:
-        return []
+# def sort_moves(moves, blackFirst=True):
+#     if not moves:
+#         return []
 
-    # Determine the starting position based on blackFirst
-    if blackFirst:
-        pattern = [1, 0]  # Black (noop at index 1 first), then alternate
-    else:
-        pattern = [0, 1]  # Red (noop at index 0 first), then alternate
+#     # Determine the starting position based on blackFirst
+#     if blackFirst:
+#         pattern = [1, 0]  # Black (noop at index 1 first), then alternate
+#     else:
+#         pattern = [0, 1]  # Red (noop at index 0 first), then alternate
 
-    # Create a function to determine the sorting key
-    def sorting_key(index):
-        # Use the alternation pattern to determine expected noop index
-        return pattern[index % 2]
+#     # Create a function to determine the sorting key
+#     def sorting_key(index):
+#         # Use the alternation pattern to determine expected noop index
+#         return pattern[index % 2]
 
-    # Sort the moves array according to the fixed pattern
-    sorted_moves = sorted(enumerate(moves), key=lambda x: sorting_key(x[0]))
-    moves = [move for _, move in sorted_moves]
+#     # Sort the moves array according to the fixed pattern
+#     sorted_moves = sorted(enumerate(moves), key=lambda x: sorting_key(x[0]))
+#     moves = [move for _, move in sorted_moves]
 
-    for i in range(len(moves)):
-        if moves[i][0] != 'noop':
-            moves[i] = ('noop', moves[i][0])
+#     for i in range(len(moves)):
+#         if moves[i][0] != 'noop':
+#             moves[i] = ('noop', moves[i][0])
 
-    return moves
+#     return moves
 
 
 def reconstruct_game(player_white, player_black, moves, board_size=BOARD_SIZE):
@@ -137,7 +131,6 @@ if __name__ == "__main__":
     # Parse the move string into a list of moves
     print("Move string: ", move_string) 
     moves = parse_moves(move_string)
-    moves = sort_moves(moves)
 
     print("Moves: ", moves)
 
