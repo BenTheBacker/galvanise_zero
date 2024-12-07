@@ -29,6 +29,14 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
+    man = get_manager()
+    if not man.can_load(GAME, MODEL):
+        network = man.create_new_network(GAME)
+        man.save_network(network, MODEL)
+    if not man.can_load(GAME, MODEL):
+        network = man.create_new_network(GAME)
+        man.save_network(network, MODEL)
+
 def parse_moves(move_string):
     moves = []
 
