@@ -53,11 +53,10 @@ def ParseMoves(moveString):
                 player, x, y = parts
 
                 #Swap move was performed
-                if x == '99' and y == 'z':
-                    newMove = ('noop', '(swap ' + lastY + ' ' + (str)(lastX) + ')')
+                if y == 'z':
+                    newMove = ('noop', '(swap)')
                 else:
                     x = (str)(x)
-                    lastX, lastY = x, y
 
                     newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
 
