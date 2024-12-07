@@ -37,65 +37,50 @@ def setup():
         network = man.create_new_network(GAME)
         man.save_network(network, MODEL)
 
-def parse_moves(move_string):
+def ParseMoves(moveString):
     moves = []
 
     # Split the string by periods
-    move_segments = move_string.split('.')
+    moveSegments = moveString.split('.')
 
-    for segment in move_segments:
-        if segment:  # Skip empty segments
+    lastY, lastX = 0, 0
 
+    for segment in moveSegments:
+        if segment: 
             parts = segment.split(':')
             if len(parts) == 3:
+                #Parse the parts
                 player, x, y = parts
 
-                newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
+                #Swap move was performed
+                if x == '99' and y == 'z':
+                    newMove = ('noop', '(swap ' + lastY + ' ' + (str)(lastX) + ')')
+                else:
+                    x = (str)(x)
+                    lastX, lastY = x, y
+
+                    newMove = ('noop', '(place ' + y + ' ' + (str)(x) + ')')
 
                 moves.append(newMove)
-
+                
     return moves
 
-# def sort_moves(moves, blackFirst=True):
-#     if not moves:
-#         return []
-
-#     # Determine the starting position based on blackFirst
-#     if blackFirst:
-#         pattern = [1, 0]  # Black (noop at index 1 first), then alternate
-#     else:
-#         pattern = [0, 1]  # Red (noop at index 0 first), then alternate
-
-#     # Create a function to determine the sorting key
-#     def sorting_key(index):
-#         # Use the alternation pattern to determine expected noop index
-#         return pattern[index % 2]
-
-#     # Sort the moves array according to the fixed pattern
-#     sorted_moves = sorted(enumerate(moves), key=lambda x: sorting_key(x[0]))
-#     moves = [move for _, move in sorted_moves]
-
-#     for i in range(len(moves)):
-#         if moves[i][0] != 'noop':
-#             moves[i] = ('noop', moves[i][0])
-
-#     return moves
 
 
 def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE):
     # Initialize GameMaster
-    gm = GameMaster(lookup.by_name(GAME), verbose=False)
-    gm.add_player(player_white, "white")
-    gm.add_player(player_black, "black")
+    gameMaster = GameMaster(lookup.by_name(GAME), verbose=False)
+    gameMaster.add_player(player_white, "Vertical")
+    gameMaster.add_player(player_black, "Horizontal")
 
     # Create MatchInfo to track and print the board
-    match_info = MatchInfo(board_size)
+    matchInfo = MatchInfo(board_size)
 
     # Start the game
-    gm.start(meta_time=15, move_time=moveTime)
+    gameMaster.start(meta_time=15, move_time=moveTime)
 
     # Retrieve the roles in the order defined by the state machine
-    roles = gm.sm.get_roles()
+    roles = gameMaster.sm.get_roles()
     if len(roles) != 2:
         raise ValueError("This function is designed for two-player games.")
 
@@ -109,23 +94,23 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
         current_role = role_order[i % len(role_order)]
 
         # Set the forced move for the current role
-        gm.set_forced_move(current_role, move[1])
+        gameMaster.set_forced_move(current_role, move[1])
 
-        if gm.verbose:
+        if gameMaster.verbose:
             log.info("Reconstructing move " + (str)(i + 1) + ": Role " + current_role + "plays " + move[1])
 
         # Execute the move by playing a single move
-        lastMove = gm.play_single_move(lastMove)
+        lastMove = gameMaster.play_single_move(lastMove)
 
         # Clear the forced move after it's been used
-        gm.clear_forced_move(current_role)
+        gameMaster.clear_forced_move(current_role)
 
     # Print the final reconstructed board
-    match_info.print_board(gm.sm)
+    matchInfo.print_board(gameMaster.sm)
     
     #Predict the final move:
-    lastMove = gm.play_single_move(lastMove)
-    match_info.print_board(gm.sm)
+    lastMove = gameMaster.play_single_move(lastMove)
+    matchInfo.print_board(gameMaster.sm)
 
     return lastMove
 
@@ -164,7 +149,7 @@ if __name__ == "__main__":
     # Parse the moves from the system argument
     if len(sys.argv) < 3:
         print("Usage: python reconstruct_game.py <time> '<moves>'")
-        print("Example: python reconstruct_game.py 10 'RED:1:a.BLUE:2:b.RED:3:c:...'")
+        print("Example: python reconstruct_game.py 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
     moveTime = (float)(sys.argv[1])
@@ -172,7 +157,7 @@ if __name__ == "__main__":
     
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
-    moves = parse_moves(move_string)
+    moves = ParseMoves(move_string)
 
     #print("Moves: ", moves)
 
