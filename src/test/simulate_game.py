@@ -165,6 +165,6 @@ if __name__ == "__main__":
 
     # Reconstruct and display the game state
     player1, player2 = GetModels()
-    move = GetNextMove(player1, player2, moves, moveTime)
+    move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
 
     print("Next Move:", move)
