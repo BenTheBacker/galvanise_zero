@@ -61,10 +61,13 @@ def constrain_resources_tf():
                                 intra_op_parallelism_threads=1,
                                 inter_op_parallelism_threads=1)
     else:
-        #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.25, allow_growth=True)
+        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.8,  # Allocate 80% of GPU memory
+                                    allow_growth=True)
+        config = tf.ConfigProto(gpu_options=gpu_options,
+                                allow_soft_placement=True,
+                                log_device_placement=True)
         
-        gpu_options = tf.GPUOptions(allow_growth=True)
-        config = tf.ConfigProto(gpu_options=gpu_options)
+        log.info("Using GPU: %s" % gpu_available[0])
 
     sess = tf.Session(config=config)
 
