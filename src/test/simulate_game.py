@@ -113,6 +113,15 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
     if displayBoard:
         matchInfo.print_board(gameMaster.sm)
 
+    if displayBoard:
+        while not gameMaster.finished():
+            matchInfo.print_board(gameMaster.sm)
+            move = gameMaster.play_single_move(last_move=move) 
+
+        print("Game Over")
+        matchInfo.print_board(gameMaster.sm)
+
+
     return lastMove
 
 def GetModels():
