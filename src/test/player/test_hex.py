@@ -38,7 +38,7 @@ def setup():
         network = man.create_new_network(GAME)
         man.save_network(network, MODEL_BLACK)
 
-def play(player_white, player_black, move_time=2.5):
+def play(player_white, player_black, move_time=10):
     """Play a game between two players and export the game data."""
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
     gm.add_player(player_white, "white")
@@ -99,7 +99,7 @@ def CreateConfig(model):
         random_scale=1.0,
         batch_size=1,
         max_dump_depth=1,
-        think_time=5
+        think_time=10
     )
     
     # Hardcoded PUCTPlayerConfig
