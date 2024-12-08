@@ -68,7 +68,7 @@ def ParseMoves(moveString):
 
 def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE, displayBoard = False):
     # Initialize GameMaster
-    gameMaster = GameMaster(lookup.by_name(GAME), verbose=False)
+    gameMaster = GameMaster(lookup.by_name(GAME), verbose=displayBoard)
     gameMaster.add_player(player_white, "white")
     gameMaster.add_player(player_black, "black")
 
@@ -124,12 +124,12 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
 
     return lastMove
 
-def CreateConfig(model):
+def CreateConfig(model, displayBoard):
     """Creates and returns a hardcoded PUCT configuration."""
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=False,
+        verbose=displayBoard,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
@@ -150,7 +150,7 @@ def CreateConfig(model):
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=False,
+        verbose=displayBoard,
         playouts_per_iteration=200,
         playouts_per_iteration_noop=0,
         generation=model,
@@ -159,9 +159,9 @@ def CreateConfig(model):
     
     return puct_config
 
-def GetModels():
-    puct_config_white =  CreateConfig(MODEL)
-    puct_config_black = CreateConfig(MODEL)
+def GetModels(displayBoard):
+    puct_config_white =  CreateConfig(MODEL, displayBoard)
+    puct_config_black = CreateConfig(MODEL, displayBoard)
 
     # Create players
     player_white = PUCTPlayer(puct_config_white)
@@ -190,7 +190,7 @@ if __name__ == "__main__":
     #print("Moves: ", moves)
 
     # Reconstruct and display the game state
-    player1, player2 = GetModels()
+    player1, player2 = GetModels(displayBoard)
     move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
 
     print("Next Move:", move)
