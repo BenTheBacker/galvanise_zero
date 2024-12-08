@@ -80,6 +80,6 @@ def init(data_format='channels_first'):
         log.warning("Changing image_data_format: %s -> %s" % (was, K.image_data_format()))
 
     # Log to confirm channels_first consistency
-    log.info("Keras image_data_format set to: %s", K.image_data_format())
+    log.info("Keras image_data_format set to: {}".format(K.image_data_format()))
 
     constrain_resources_tf()
