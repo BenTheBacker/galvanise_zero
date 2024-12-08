@@ -61,9 +61,9 @@ def constrain_resources_tf():
                                 intra_op_parallelism_threads=1,
                                 inter_op_parallelism_threads=1)
     else:
-        gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.25,
-                                    allow_growth=True)
-
+        #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.25, allow_growth=True)
+        
+        gpu_options = tf.GPUOptions(allow_growth=True)
         config = tf.ConfigProto(gpu_options=gpu_options)
 
     sess = tf.Session(config=config)
@@ -78,5 +78,8 @@ def init(data_format='channels_first'):
         was = K.image_data_format()
         K.set_image_data_format(data_format)
         log.warning("Changing image_data_format: %s -> %s" % (was, K.image_data_format()))
+
+    # Log to confirm channels_first consistency
+    log.info("Keras image_data_format set to: %s", K.image_data_format())
 
     constrain_resources_tf()
