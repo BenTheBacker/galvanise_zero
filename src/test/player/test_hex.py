@@ -76,30 +76,46 @@ def play(player_white, player_black, move_time=2.5):
     gm.finalise_match(move)
     match_info.print_board(gm.sm) 
 
+def CreateConfig(model):
+    """Creates and returns a hardcoded PUCT configuration."""
+    
+    # Hardcoded PUCTEvaluatorConfig
+    eval_config = confs.PUCTEvaluatorConfig(
+        verbose=False,
+        puct_constant=0.85,
+        puct_constant_root=3.0,
+        dirichlet_noise_pct=-1,
+        fpu_prior_discount=0.25,
+        fpu_prior_discount_root=0.15,
+        choose="choose_temperature",
+        temperature=2.0,
+        depth_temperature_max=10.0,
+        depth_temperature_start=0,
+        depth_temperature_increment=0.75,
+        depth_temperature_stop=1,
+        random_scale=1.0,
+        batch_size=1,
+        max_dump_depth=1
+    )
+    
+    # Hardcoded PUCTPlayerConfig
+    puct_config = confs.PUCTPlayerConfig(
+        name="gzero",
+        verbose=False,
+        playouts_per_iteration=200,
+        playouts_per_iteration_noop=0,
+        generation=model,
+        evaluator_config=eval_config
+    )
+    
+    return puct_config
 
 def play_b1_vs_h1():
     """Set up and play a game between b1_173 and h1_141."""
-    # Define evaluation configuration for b1_173
-    eval_config_white = templates.base_puct_config(verbose=False, max_dump_depth=1)
-    puct_config_white = confs.PUCTPlayerConfig(
-        "gzero",
-        True,
-        800,
-        0,
-        MODEL_WHITE,
-        eval_config_white
-    )
 
-    # Define evaluation configuration for h1_141
-    eval_config_black = templates.base_puct_config(verbose=False, max_dump_depth=1)
-    puct_config_black = confs.PUCTPlayerConfig(
-        "gzero",
-        True,
-        800,
-        0,
-        MODEL_BLACK,
-        eval_config_black
-    )
+    puct_config_white = CreateConfig(MODEL_WHITE)
+    puct_config_black = CreateConfig(MODEL_BLACK)
+
 
     attrutil.pprint(puct_config_white)  # Print white player's configuration
     attrutil.pprint(puct_config_black)  # Print black player's configuration
