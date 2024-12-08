@@ -124,12 +124,12 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
 
     return lastMove
 
-def CreateConfig(model, displayBoard):
+def CreateConfig(model, displayLog):
     """Creates and returns a hardcoded PUCT configuration."""
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=displayBoard,
+        verbose=displayLog,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
@@ -150,7 +150,7 @@ def CreateConfig(model, displayBoard):
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=displayBoard,
+        verbose=displayLog,
         playouts_per_iteration=200,
         playouts_per_iteration_noop=0,
         generation=model,
@@ -176,12 +176,13 @@ if __name__ == "__main__":
     # Parse the moves from the system argument
     if len(sys.argv) < 4:
         print("Usage: python reconstruct_game.py <time> '<moves>'")
-        print("Example: python reconstruct_game.py F 10 'V:1:a.H:99:z.V:1:b....'")
+        print("Example: python reconstruct_game.py F F 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
     displayBoard = (sys.argv[1] == 'T')
-    moveTime = (float)(sys.argv[2])
-    move_string = sys.argv[3]
+    displayLogs = (sys.argv[2] == 'T')
+    moveTime = (float)(sys.argv[3])
+    move_string = sys.argv[4]
     
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
@@ -190,7 +191,7 @@ if __name__ == "__main__":
     #print("Moves: ", moves)
 
     # Reconstruct and display the game state
-    player1, player2 = GetModels(displayBoard)
+    player1, player2 = GetModels(displayLogs)
     move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
 
     print("Next Move:", move)
