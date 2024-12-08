@@ -151,7 +151,7 @@ def CreateConfig(model, displayLog):
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
         verbose=displayLog,
-        playouts_per_iteration=200,
+        playouts_per_iteration=800,
         playouts_per_iteration_noop=0,
         generation=model,
         evaluator_config=eval_config
@@ -159,9 +159,9 @@ def CreateConfig(model, displayLog):
     
     return puct_config
 
-def GetModels(displayBoard):
-    puct_config_white =  CreateConfig(MODEL, displayBoard)
-    puct_config_black = CreateConfig(MODEL, displayBoard)
+def GetModels(displayLog):
+    puct_config_white =  CreateConfig(MODEL, displayLog)
+    puct_config_black = CreateConfig(MODEL, displayLog)
 
     # Create players
     player_white = PUCTPlayer(puct_config_white)
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
     # Parse the moves from the system argument
     if len(sys.argv) < 4:
-        print("Usage: python reconstruct_game.py <time> '<moves>'")
+        print("Usage: python reconstruct_game.py <display board (T/F) <display log (T/F)> <time> '<moves>'")
         print("Example: python reconstruct_game.py F F 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
