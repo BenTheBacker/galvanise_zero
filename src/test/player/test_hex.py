@@ -99,7 +99,7 @@ def CreateConfig(model):
         depth_temperature_increment=0.75,
         depth_temperature_stop=1,
         random_scale=1.0,
-        batch_size=1,
+        batch_size=8,
         max_dump_depth=1,
         think_time=MOVE_TIME
     )
