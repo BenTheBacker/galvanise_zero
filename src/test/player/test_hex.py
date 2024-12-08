@@ -14,6 +14,8 @@ GAME = "hex_lg_11"
 MODEL_WHITE = "b1_173"  # Model for white player
 MODEL_BLACK = "h1_141"  # Model for black player
 
+MOVE_TIME = 2
+
 def setup():
     """Initialize the environment and prepare the neural network manager."""
     import tensorflow as tf
@@ -99,7 +101,7 @@ def CreateConfig(model):
         random_scale=1.0,
         batch_size=1,
         max_dump_depth=1,
-        think_time=10
+        think_time=MOVE_TIME
     )
     
     # Hardcoded PUCTPlayerConfig
@@ -120,6 +122,8 @@ def play_b1_vs_h1():
     puct_config_white = CreateConfig(MODEL_WHITE)
     puct_config_black = CreateConfig(MODEL_BLACK)
 
+    simple = get.get_player("simplemcts")
+    simple.max_run_time = MOVE_TIME
 
     attrutil.pprint(puct_config_white)  # Print white player's configuration
     attrutil.pprint(puct_config_black)  # Print black player's configuration
@@ -129,7 +133,8 @@ def play_b1_vs_h1():
     player_black = PUCTPlayer(puct_config_black)  # h1_141
 
     # Start the game
-    play(player_white, player_black)
+    #play(player_white, player_black, MOVE_TIME)
+    play(player_white, simple, MOVE_TIME)
 
 if __name__ == "__main__":
     setup()
