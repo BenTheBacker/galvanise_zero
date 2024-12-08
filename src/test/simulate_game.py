@@ -124,27 +124,44 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
 
     return lastMove
 
-def GetModels():
-    eval_config_white = templates.base_puct_config(verbose=False, max_dump_depth=1)
-    puct_config_white = confs.PUCTPlayerConfig(
-        "gzero",
-        True,
-        800,
-        0,
-        MODEL,
-        eval_config_white
+def CreateConfig(model):
+    """Creates and returns a hardcoded PUCT configuration."""
+    
+    # Hardcoded PUCTEvaluatorConfig
+    eval_config = confs.PUCTEvaluatorConfig(
+        verbose=False,
+        puct_constant=0.85,
+        puct_constant_root=3.0,
+        dirichlet_noise_pct=-1,
+        fpu_prior_discount=0.25,
+        fpu_prior_discount_root=0.15,
+        choose="choose_temperature",
+        temperature=2.0,
+        depth_temperature_max=10.0,
+        depth_temperature_start=0,
+        depth_temperature_increment=0.75,
+        depth_temperature_stop=1,
+        random_scale=1.0,
+        batch_size=1,
+        max_dump_depth=1,
+        think_time=5
     )
+    
+    # Hardcoded PUCTPlayerConfig
+    puct_config = confs.PUCTPlayerConfig(
+        name="gzero",
+        verbose=False,
+        playouts_per_iteration=200,
+        playouts_per_iteration_noop=0,
+        generation=model,
+        evaluator_config=eval_config
+    )
+    
+    return puct_config
 
-    # Define evaluation configuration for h1_141
-    eval_config_black = templates.base_puct_config(verbose=False, max_dump_depth=1)
-    puct_config_black = confs.PUCTPlayerConfig(
-        "gzero",
-        True,
-        800,
-        0,
-        MODEL,
-        eval_config_black
-    )
+def GetModels():
+    puct_config_white =  CreateConfig(MODEL)
+    puct_config_black = CreateConfig(MODEL)
 
     # Create players
     player_white = PUCTPlayer(puct_config_white)

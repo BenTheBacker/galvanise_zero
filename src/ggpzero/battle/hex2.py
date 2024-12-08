@@ -80,11 +80,14 @@ class MatchInfo(MatchGameInfo):
                 if key in board_map:
                     if key in board_map_colours:
                         ll.append(colorama.Fore.GREEN)
+
                     if board_map[key] == "black":
-                        ll.append(" %s" % u"\u26C0")
+                        #ll.append(" %s" % u"\u26C0")
+                        ll.append(" B")
                     else:
                         assert board_map[key] == "white"
-                        ll.append(" %s" % u"\u26C2")
+                        #ll.append(" %s" % u"\u26C2")
+                        ll.append(" W")
 
                     if key in board_map_colours:
                         ll.append(colorama.Style.RESET_ALL)
