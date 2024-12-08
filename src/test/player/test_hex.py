@@ -14,7 +14,7 @@ GAME = "hex_lg_11"
 MODEL_WHITE = "b1_173"  # Model for white player
 MODEL_BLACK = "h1_141"  # Model for black player
 
-MOVE_TIME = 2
+MOVE_TIME = 10
 
 def setup():
     """Initialize the environment and prepare the neural network manager."""
@@ -99,7 +99,7 @@ def CreateConfig(model):
         depth_temperature_increment=0.75,
         depth_temperature_stop=1,
         random_scale=1.0,
-        batch_size=1,
+        batch_size=8,
         max_dump_depth=1,
         think_time=MOVE_TIME
     )
