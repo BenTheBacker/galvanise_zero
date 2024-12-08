@@ -56,32 +56,35 @@ def play(player_white, player_black, move_time=2.5):
         match_info.print_board(gm.sm) 
         move = gm.play_single_move(last_move=move) 
 
-        player = None
-        movement = None
+        # player = None
+        # movement = None
 
-        if move is not None:
-            if move[0] == 'noop':
-                player = "white"
-                movement = move[1]
-            else:
-                player = "black"
-                movement = move[0]
+        # if move is not None:
+        #     if move[0] == 'noop':
+        #         player = "white"
+        #         movement = move[1]
+        #     else:
+        #         player = "black"
+        #         movement = move[0]
 
-        print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
-        print(type(movement))
-        print(dir(movement))
+        # print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
+        # print(type(movement))
+        # print(dir(movement))
 
         print("END ===============================================================")
 
     gm.finalise_match(move)
+
+    print("WINNING ===============================================================")
     match_info.print_board(gm.sm) 
+    print("WIN END ===============================================================")
 
 def CreateConfig(model):
     """Creates and returns a hardcoded PUCT configuration."""
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=False,
+        verbose=True,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
@@ -102,7 +105,7 @@ def CreateConfig(model):
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=False,
+        verbose=True,
         playouts_per_iteration=800,
         playouts_per_iteration_noop=0,
         generation=model,
