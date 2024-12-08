@@ -116,7 +116,7 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
     if displayBoard:
         while not gameMaster.finished():
             matchInfo.print_board(gameMaster.sm)
-            move = gameMaster.play_single_move(last_move=move) 
+            lastMove = gameMaster.play_single_move(last_move=lastMove) 
 
         print("Game Over")
         matchInfo.print_board(gameMaster.sm)
