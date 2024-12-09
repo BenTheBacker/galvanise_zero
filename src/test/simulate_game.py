@@ -162,8 +162,8 @@ if __name__ == "__main__":
 
     displayBoard = (sys.argv[1] == 'T')
     displayLogs = (sys.argv[2] == 'T')
-    moveTime = (float)(sys.argv[4])
-    move_string = sys.argv[5]
+    moveTime = (float)(sys.argv[3])
+    move_string = sys.argv[4]
     
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
