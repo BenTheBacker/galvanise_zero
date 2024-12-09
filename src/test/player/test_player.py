@@ -125,7 +125,7 @@ def test_random():
     # add two players
     # simplemcts vs RANDOM_GEN
     pymcs = get.get_player("simplemcts")
-    pymcs.max_run_time = 0.25
+    pymcs.max_run_time = 1
 
     eval_config = templates.base_puct_config(verbose=True,
                                              max_dump_depth=1)
