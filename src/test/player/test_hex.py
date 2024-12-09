@@ -110,7 +110,7 @@ def CreateConfig(model):
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
         verbose=True,
-        playouts_per_iteration=-1,
+        playouts_per_iteration=800,
         playouts_per_iteration_noop=0,
         generation=model,
         evaluator_config=eval_config
