@@ -10,7 +10,7 @@ from ggpzero.nn.manager import get_manager
 from ggpzero.player.puctplayer import PUCTPlayer
 
 BOARD_SIZE = 11
-GAME = "hex_lg_11"
+GAME = "hexLG11"
 MODEL = "b1_173"
 
 def setup():
@@ -29,13 +29,6 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
-    man = get_manager()
-    if not man.can_load(GAME, MODEL):
-        network = man.create_new_network(GAME)
-        man.save_network(network, MODEL)
-    if not man.can_load(GAME, MODEL):
-        network = man.create_new_network(GAME)
-        man.save_network(network, MODEL)
 
 def ParseMoves(moveString):
     moves = []
@@ -63,7 +56,6 @@ def ParseMoves(moveString):
                 moves.append(newMove)
                 
     return moves
-
 
 
 def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE, displayBoard = False):
@@ -113,46 +105,35 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
     if displayBoard:
         matchInfo.print_board(gameMaster.sm)
 
-    if displayBoard:
-        while not gameMaster.finished():
-            matchInfo.print_board(gameMaster.sm)
-            lastMove = gameMaster.play_single_move(lastMove) 
-
-        print("Game Over")
-        matchInfo.print_board(gameMaster.sm)
-
-
     return lastMove
 
-def CreateConfig(model, displayLog):
+def CreateConfig(model):
     """Creates and returns a hardcoded PUCT configuration."""
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=displayLog,
+        verbose=False,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
-        fpu_prior_discount=0.25,
-        fpu_prior_discount_root=0.15,
+        fpu_prior_discount=0.15,
+        fpu_prior_discount_root=0.1,
         choose="choose_temperature",
-        temperature=2.0,
+        temperature=1.0,
         depth_temperature_max=10.0,
         depth_temperature_start=0,
-        depth_temperature_increment=0.75,
+        depth_temperature_increment=0.5,
         depth_temperature_stop=1,
         random_scale=1.0,
         batch_size=1,
         max_dump_depth=1,
-        think_time=5
     )
     
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=displayLog,
-        playouts_per_iteration=800,
-        playouts_per_iteration_noop=0,
+        verbose=False,
+        playouts_per_iteration=200,  
         generation=model,
         evaluator_config=eval_config
     )
@@ -176,12 +157,11 @@ if __name__ == "__main__":
     # Parse the moves from the system argument
     if len(sys.argv) < 4:
         print("Usage: python reconstruct_game.py <display board (T/F) <display log (T/F)> <MC Search> <time> '<moves>'")
-        print("Example: python reconstruct_game.py F F T 10 'V:1:a.H:99:z.V:1:b....'")
+        print("Example: python reconstruct_game.py F F 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
     displayBoard = (sys.argv[1] == 'T')
     displayLogs = (sys.argv[2] == 'T')
-    useSMCTS = (sys.argv[3] == 'T')
     moveTime = (float)(sys.argv[4])
     move_string = sys.argv[5]
     
@@ -192,15 +172,7 @@ if __name__ == "__main__":
     #print("Moves: ", moves)
 
     # Reconstruct and display the game state
-    if useSMCTS:
-        player1, player2 = GetModels(displayLogs)
-        move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
-    else:
-        player1 = get.get_player("simplemcts")
-        player1.max_run_time = moveTime
-        player2 = get.get_player("simplemcts")
-        player2.max_run_time = moveTime
-
-        move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
-
+    player1, player2 = GetModels(displayLogs)
+    move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
+        
     print("Next Move:", move)
