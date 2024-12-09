@@ -34,15 +34,15 @@ def setup():
     np.set_printoptions(threshold=100000)
 
     man = get_manager()
-    if not man.can_load(GAME, MODEL_WHITE):
+    #if not man.can_load(GAME, MODEL_WHITE):
         #network = man.create_new_network(GAME)
-        network = man.load_network(GAME, MODEL_WHITE)
-        man.save_network(network, MODEL_WHITE)
+        #network = man.load_network(GAME, MODEL_WHITE)
+        #man.save_network(network, MODEL_WHITE)
 
-    if not man.can_load(GAME, MODEL_BLACK):
+    #if not man.can_load(GAME, MODEL_BLACK):
         #network = man.create_new_network(GAME)
-        network = man.load_network(GAME, MODEL_WHITE)
-        man.save_network(network, MODEL_BLACK)
+        #network = man.load_network(GAME, MODEL_WHITE)
+        #man.save_network(network, MODEL_BLACK)
 
 def play(player_white, player_black, move_time=10):
     """Play a game between two players and export the game data."""
