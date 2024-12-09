@@ -107,12 +107,12 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
 
     return lastMove
 
-def CreateConfig(model):
+def CreateConfig(model, displayLog):
     """Creates and returns a hardcoded PUCT configuration."""
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=False,
+        verbose=displayLog,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
@@ -132,7 +132,7 @@ def CreateConfig(model):
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=False,
+        verbose=displayLog,
         playouts_per_iteration=200,  
         generation=model,
         evaluator_config=eval_config
