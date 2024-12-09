@@ -2,7 +2,7 @@ import os
 
 
 from ggplib.db import lookup
-
+from ggplib.util import log
 from ggpzero.util import attrutil
 from ggpzero.util.keras import keras_models
 
@@ -121,6 +121,7 @@ class Manager(object):
             f.write(attrutil.attr_to_json(nn.generation_descr, pretty=True))
 
     def load_network(self, game, generation_name):
+        log.info("Loading network %s/%s" % (game, generation_name))
         json_str = open(self.generation_path(game, generation_name)).read()
         generation_descr = attrutil.json_to_attr(json_str)
 
