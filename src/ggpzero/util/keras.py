@@ -43,6 +43,7 @@ def get_antirectifier(name):
     # output_shape=antirectifier_output_shape
     return keras_layers.Lambda(antirectifier, name=name)
 
+import multiprocessing
 
 def constrain_resources_tf():
     ' constrain resource as tensorflow likes to assimilate your machine rendering it useless '
@@ -58,8 +59,8 @@ def constrain_resources_tf():
         config = tf.ConfigProto(device_count=dict(CPU=1),
                                 allow_soft_placement=False,
                                 log_device_placement=False,
-                                intra_op_parallelism_threads=1,
-                                inter_op_parallelism_threads=1)
+                                intra_op_parallelism_threads=multiprocessing.cpu_count(),
+                                inter_op_parallelism_threads=multiprocessing.cpu_count())
     else:
         gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.8,  # Allocate 80% of GPU memory
                                     allow_growth=True)
