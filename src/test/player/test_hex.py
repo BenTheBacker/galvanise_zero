@@ -129,7 +129,7 @@ def play_b1_vs_h1():
 
     # Start the game
     #play(player_white, player_black, MOVE_TIME)
-    play(simpleWhite, simpleBlack, MOVE_TIME)
+    play(simpleWhite, player_black, MOVE_TIME)
 
 if __name__ == "__main__":
     setup()
