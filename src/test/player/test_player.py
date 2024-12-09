@@ -146,7 +146,7 @@ def test_random():
 def test_trained():
     # simplemcts vs GOOD_GEN
     simple = get.get_player("simplemcts")
-    simple.max_run_time = 0.5
+    simple.max_run_time = 2
 
     eval_config = confs.PUCTEvaluatorConfig(verbose=True,
                                             puct_constant=0.85,
