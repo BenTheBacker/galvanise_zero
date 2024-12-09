@@ -82,6 +82,7 @@ class Manager(object):
             transformer = transformer_clz(game_info, generation_descr)
             self.transformers[key] = transformer
 
+
         log.debug("Created transformer: num_channels={}, num_cols={}, num_rows={}".format(transformer.num_channels, transformer.num_cols, transformer.num_rows))
 
         return transformer
