@@ -175,14 +175,15 @@ if __name__ == "__main__":
 
     # Parse the moves from the system argument
     if len(sys.argv) < 4:
-        print("Usage: python reconstruct_game.py <display board (T/F) <display log (T/F)> <time> '<moves>'")
-        print("Example: python reconstruct_game.py F F 10 'V:1:a.H:99:z.V:1:b....'")
+        print("Usage: python reconstruct_game.py <display board (T/F) <display log (T/F)> <MC Search> <time> '<moves>'")
+        print("Example: python reconstruct_game.py F F T 10 'V:1:a.H:99:z.V:1:b....'")
         sys.exit(1)
 
     displayBoard = (sys.argv[1] == 'T')
     displayLogs = (sys.argv[2] == 'T')
-    moveTime = (float)(sys.argv[3])
-    move_string = sys.argv[4]
+    useSMCTS = (sys.argv[3] == 'T')
+    moveTime = (float)(sys.argv[4])
+    move_string = sys.argv[5]
     
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
@@ -191,7 +192,15 @@ if __name__ == "__main__":
     #print("Moves: ", moves)
 
     # Reconstruct and display the game state
-    player1, player2 = GetModels(displayLogs)
-    move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
+    if useSMCTS:
+        player1, player2 = GetModels(displayLogs)
+        move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
+    else:
+        player1 = get.get_player("simplemcts")
+        player1.max_run_time = moveTime
+        player2 = get.get_player("simplemcts")
+        player2.max_run_time = moveTime
+
+        move = GetNextMove(player1, player2, moves, moveTime, displayBoard=displayBoard)
 
     print("Next Move:", move)
