@@ -157,11 +157,22 @@ class PlayPoller(PollerBase):
     def __init__(self, sm, nn, conf):
         assert isinstance(conf, confs.PUCTEvaluatorConfig)
         super().__init__(sm, nn, batch_size=conf.batch_size)
+
         transformer = nn.gdl_bases_transformer
+        log.debug("Transformer details: num_channels={}, num_cols={}, num_rows={}".format(transformer.num_channels, transformer.num_cols, transformer.num_rows))
+
         self.c_transformer = create_c_transformer(transformer)
+        log.debug("C Transformer created: {}".format(self.c_transformer))
+
         self.c_player = ggpzero_interface.Player(sm_to_ptr(sm),
                                                  self.c_transformer,
                                                  attr.asdict(conf))
+        
+        log.debug("State machine (sm): {}".format(sm))
+        log.debug("State machine pointer (sm_to_ptr): {}".format(sm_to_ptr(sm)))
+
+        log.debug("PUCTEvaluatorConfig: {}".format(attr.asdict(conf)))
+
 
         for name in "reset apply_move move get_move update_config balance_moves tree_debug".split():
             name = "player_" + name
