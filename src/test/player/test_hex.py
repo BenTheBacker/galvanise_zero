@@ -32,6 +32,15 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
+    man = get_manager()
+    if not man.can_load(GAME, MODEL_WHITE):
+        network = man.create_new_network(GAME)
+        man.save_network(network, MODEL_WHITE)
+
+    if not man.can_load(GAME, MODEL_BLACK):
+        network = man.create_new_network(GAME)
+        man.save_network(network, MODEL_BLACK)
+
 def play(player_white, player_black, move_time=10):
     """Play a game between two players and export the game data."""
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
