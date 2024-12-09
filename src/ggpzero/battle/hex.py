@@ -160,10 +160,10 @@ class MatchInfo(MatchGameInfo):
                 key = x, y
                 if key in board_map:
                     if board_map[key] == "black":
-                        ll.append(" %s" % u"\u26C0")
+                        ll.append(" %s" % "B")
                     else:
                         assert board_map[key] == "white"
-                        ll.append(" %s" % u"\u26C2")
+                        ll.append(" %s" % "W")
                 else:
                     ll.append(" .")
 
