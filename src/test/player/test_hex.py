@@ -34,7 +34,7 @@ def setup():
     np.set_printoptions(threshold=100000)
 
 
-def play(player_white, player_black, move_time=10):
+def play(player_white, player_black, move_time=MOVE_TIME):
     """Play a game between two players and export the game data."""
     gm = GameMaster(lookup.by_name(GAME), verbose=False)
     gm.add_player(player_white, "white")
@@ -80,7 +80,7 @@ def CreateConfig(model):
     
     # Hardcoded PUCTEvaluatorConfig
     eval_config = confs.PUCTEvaluatorConfig(
-        verbose=True,
+        verbose=False,
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
@@ -93,17 +93,15 @@ def CreateConfig(model):
         depth_temperature_increment=0.5,
         depth_temperature_stop=1,
         random_scale=1.0,
-        batch_size=64,
+        batch_size=1,
         max_dump_depth=1,
-        think_time=MOVE_TIME  # Adjusted move time
     )
     
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
-        verbose=True,
-        playouts_per_iteration=1000,  
-        playouts_per_iteration_noop=100,
+        verbose=False,
+        playouts_per_iteration=200,  
         generation=model,
         evaluator_config=eval_config
     )
