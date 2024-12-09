@@ -94,26 +94,26 @@ def CreateConfig(model):
         puct_constant=0.85,
         puct_constant_root=3.0,
         dirichlet_noise_pct=-1,
-        fpu_prior_discount=0.25,
-        fpu_prior_discount_root=0.15,
+        fpu_prior_discount=0.15,
+        fpu_prior_discount_root=0.1,
         choose="choose_temperature",
-        temperature=2.0,
+        temperature=1.0,
         depth_temperature_max=10.0,
         depth_temperature_start=0,
-        depth_temperature_increment=0.75,
+        depth_temperature_increment=0.5,
         depth_temperature_stop=1,
         random_scale=1.0,
-        batch_size=512,
+        batch_size=64,
         max_dump_depth=1,
-        think_time=MOVE_TIME
+        think_time=MOVE_TIME  # Adjusted move time
     )
     
     # Hardcoded PUCTPlayerConfig
     puct_config = confs.PUCTPlayerConfig(
         name="gzero",
         verbose=True,
-        playouts_per_iteration=800 * 100,
-        playouts_per_iteration_noop=0,
+        playouts_per_iteration=1000,  
+        playouts_per_iteration_noop=100,
         generation=model,
         evaluator_config=eval_config
     )
