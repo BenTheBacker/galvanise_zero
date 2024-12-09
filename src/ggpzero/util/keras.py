@@ -12,6 +12,7 @@ from keras import models as keras_models
 from keras import layers as keras_layers
 from keras import regularizers as keras_regularizers
 
+import multiprocessing
 
 def _bla():
     ' i am here to confuse flake8 '
@@ -55,7 +56,8 @@ def constrain_resources_tf():
 
     if not gpu_available:
         # this doesn't strictly use just one cpu... but seems it is the best one can do
-        config = tf.ConfigProto(device_count=dict(CPU=1),
+        num_cpu = multiprocessing.cpu_count()
+        config = tf.ConfigProto(device_count={'CPU': num_cpu},
                                 allow_soft_placement=False,
                                 log_device_placement=False,
                                 intra_op_parallelism_threads=1,
