@@ -65,7 +65,7 @@ class Manager(object):
         if generation_descr is None:
             generation_descr = templates.default_generation_desc(game)
 
-        log.debug("GenerationDescription: {}".format(vars(generation_descr)))
+        log.debug("GenerationDescription: {}".format(str(generation_descr)))
 
         assert isinstance(generation_descr, datadesc.GenerationDescription)
 
