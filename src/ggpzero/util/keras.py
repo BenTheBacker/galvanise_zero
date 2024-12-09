@@ -43,7 +43,6 @@ def get_antirectifier(name):
     # output_shape=antirectifier_output_shape
     return keras_layers.Lambda(antirectifier, name=name)
 
-import multiprocessing
 
 def constrain_resources_tf():
     ' constrain resource as tensorflow likes to assimilate your machine rendering it useless '
@@ -54,21 +53,19 @@ def constrain_resources_tf():
     local_device_protos = device_lib.list_local_devices()
     gpu_available = [x.name for x in local_device_protos if x.device_type == 'GPU']
 
-    if not gpu_available or True:
+    if not gpu_available:
         # this doesn't strictly use just one cpu... but seems it is the best one can do
         config = tf.ConfigProto(device_count=dict(CPU=1),
                                 allow_soft_placement=False,
                                 log_device_placement=False,
-                                intra_op_parallelism_threads=multiprocessing.cpu_count(),
-                                inter_op_parallelism_threads=multiprocessing.cpu_count())
+                                intra_op_parallelism_threads=1,
+                                inter_op_parallelism_threads=1)
     else:
         gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.8,  # Allocate 80% of GPU memory
                                     allow_growth=True)
         config = tf.ConfigProto(gpu_options=gpu_options,
                                 allow_soft_placement=True,
                                 log_device_placement=True)
-        
-        log.info("Using GPU: %s" % gpu_available[0])
 
     sess = tf.Session(config=config)
 
