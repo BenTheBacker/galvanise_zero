@@ -118,6 +118,8 @@ def play(player_white, player_black, move_time=0.5):
 
     gm.finalise_match(move)
 
+    input("Press Enter to continue...")
+
 
 def test_random():
     # add two players
