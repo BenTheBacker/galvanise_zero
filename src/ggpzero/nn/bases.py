@@ -91,12 +91,10 @@ class GdlBasesTransformer(object):
         assert self.num_previous_states >= 0
         self.init_spaces()
 
-        log.debug("num_channels: {}".format(self.num_channels))
-        log.debug("raw_channels_per_state: {}".format(self.raw_channels_per_state))
-        log.debug("num_previous_states: {}".format(self.num_previous_states))
-        log.debug("num_of_controls_channels: {}".format(self.num_of_controls_channels))
-
-
+        #log.debug("num_channels: {}".format(self.num_channels))
+        #log.debug("raw_channels_per_state: {}".format(self.raw_channels_per_state))
+        #log.debug("num_previous_states: {}".format(self.num_previous_states))
+        #log.debug("num_of_controls_channels: {}".format(self.num_of_controls_channels))
 
     @property
     def game(self):
