@@ -79,8 +79,6 @@ class PollerBase(object):
         ''' POLL_AGAIN is returned, to indicate we need to call poll() again. '''
 
         transformer = self.nn.gdl_bases_transformer
-        log.debug("Transformer num_channels: %d, num_cols: %d, num_rows: %d", t.num_channels, t.num_cols, t.num_rows)
-
         expect_num_arrays = len(transformer.policy_dist_count) + 1
 
         if self.poll_last is None:
@@ -105,6 +103,9 @@ class PollerBase(object):
         t = self.nn.gdl_bases_transformer
         num_predictions = len(pred_array) / (t.num_channels * t.channel_size)
         assert num_predictions <= self.batch_size
+
+        log.debug("Transformer num_channels: %d, num_cols: %d, num_rows: %d", t.num_channels, t.num_cols, t.num_rows)
+
 
         log.debug("Shape of pred_array before reshape: %s", pred_array.shape)
         log.debug("Expected shape: (%d, %d, %d, %d)", num_predictions, t.num_channels, t.num_cols, t.num_rows)
