@@ -75,6 +75,7 @@ def play(player_white, player_black, move_time=10):
         # print(dir(movement))
 
         print("END ===============================================================")
+        input("Press Enter to continue...")
 
     gm.finalise_match(move)
 
