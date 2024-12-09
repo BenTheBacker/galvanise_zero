@@ -76,13 +76,13 @@ class Manager(object):
 
         if transformer is None:
             # looks up the game in the ggplib database
+            log.debug("Looking up game: {}".format(game))
             game_info = lookup.by_name(game)
             transformer_clz = GdlBasesTransformer_Draws if generation_descr.draw_head else GdlBasesTransformer
             transformer = transformer_clz(game_info, generation_descr)
             self.transformers[key] = transformer
 
         log.debug("Created transformer: num_channels={}, num_cols={}, num_rows={}".format(transformer.num_channels, transformer.num_cols, transformer.num_rows))
-
 
         return transformer
 
