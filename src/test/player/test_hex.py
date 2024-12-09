@@ -50,7 +50,7 @@ def play(player_white, player_black, move_time=10):
     # Instantiate MatchInfo with the board size
     match_info = MatchInfo(BOARD_SIZE)
 
-    gm.start(meta_time=15, move_time=move_time)
+    gm.start(meta_time=move_time * 1.5, move_time=move_time)
 
     move = None
 
@@ -75,7 +75,6 @@ def play(player_white, player_black, move_time=10):
         # print(dir(movement))
 
         print("END ===============================================================")
-        input("Press Enter to continue...")
 
     gm.finalise_match(move)
 
