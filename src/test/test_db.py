@@ -5,6 +5,9 @@ import traceback
 
 
 def main():
+    lookup.the_database = None
+    lookup.get_database()
+
     # Retrieve all game names from the database
     game_names = lookup.get_all_game_names()
     
