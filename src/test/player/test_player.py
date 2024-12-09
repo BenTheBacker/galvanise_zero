@@ -101,7 +101,7 @@ def pretty_board(board_size, sm):
     print "Control:", control
 
 
-def play(player_white, player_black, move_time=0.5):
+def play(player_white, player_black, move_time=1.5):
     gm = GameMaster(lookup.by_name(GAME), verbose=True)
     gm.add_player(player_white, "white")
     gm.add_player(player_black, "black")
