@@ -53,7 +53,7 @@ def constrain_resources_tf():
     local_device_protos = device_lib.list_local_devices()
     gpu_available = [x.name for x in local_device_protos if x.device_type == 'GPU']
 
-    if not gpu_available:
+    if not gpu_available or True:
         # this doesn't strictly use just one cpu... but seems it is the best one can do
         config = tf.ConfigProto(device_count=dict(CPU=1),
                                 allow_soft_placement=False,
