@@ -1,4 +1,4 @@
-from ggplib.db.lookup import get_all_game_names
+from ggplib.db import lookup
 
 import sys
 import traceback
@@ -6,7 +6,7 @@ import traceback
 
 def main():
     # Retrieve all game names from the database
-    game_names = get_all_game_names()
+    game_names = lookup.get_all_game_names()
     
     # Check if there are any games
     if not game_names:
