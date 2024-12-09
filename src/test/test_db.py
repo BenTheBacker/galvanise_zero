@@ -1,4 +1,4 @@
-from ggplib.db import lookup, get_all_game_names
+from ggplib.db.lookup import get_all_game_names
 
 import sys
 import traceback
