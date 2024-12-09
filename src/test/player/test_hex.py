@@ -10,7 +10,7 @@ from ggpzero.player.puctplayer import PUCTPlayer
 from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo instead of print_board
 
 BOARD_SIZE = 11
-GAME = "hexLG11"
+GAME = "hex_lg_11"  # Game to play
 MODEL_WHITE = "b1_173"  # Model for white player
 MODEL_BLACK = "h1_141"  # Model for black player
 
@@ -114,8 +114,11 @@ def play_b1_vs_h1():
     puct_config_white = CreateConfig(MODEL_WHITE)
     puct_config_black = CreateConfig(MODEL_BLACK)
 
-    simple = get.get_player("simplemcts")
-    simple.max_run_time = MOVE_TIME
+    simpleBlack = get.get_player("simplemcts")
+    simpleBlack.max_run_time = MOVE_TIME
+
+    simpleWhite = get.get_player("simplemcts")
+    simpleWhite.max_run_time = MOVE_TIME
 
     attrutil.pprint(puct_config_white)  # Print white player's configuration
     attrutil.pprint(puct_config_black)  # Print black player's configuration
@@ -126,7 +129,7 @@ def play_b1_vs_h1():
 
     # Start the game
     #play(player_white, player_black, MOVE_TIME)
-    play(player_white, simple, MOVE_TIME)
+    play(simpleWhite, simpleBlack, MOVE_TIME)
 
 if __name__ == "__main__":
     setup()
