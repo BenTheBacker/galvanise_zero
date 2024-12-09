@@ -10,7 +10,7 @@ from ggpzero.player.puctplayer import PUCTPlayer
 from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo instead of print_board
 
 BOARD_SIZE = 11
-GAME = "hex_lg_11"  # Game to play
+GAME = "hexLG11"  # Game to play
 MODEL_WHITE = "b1_173"  # Model for white player
 MODEL_BLACK = "h1_141"  # Model for black player
 
@@ -34,13 +34,13 @@ def setup():
 
     man = get_manager()
     if not man.can_load(GAME, MODEL_WHITE):
-        network = man.create_new_network(GAME)
-        #network = man.load_network(GAME, MODEL_WHITE)
+        #network = man.create_new_network(GAME)
+        network = man.load_network(GAME, MODEL_WHITE)
         man.save_network(network, MODEL_WHITE)
 
     if not man.can_load(GAME, MODEL_BLACK):
-        network = man.create_new_network(GAME)
-        #network = man.load_network(GAME, MODEL_WHITE)
+        #network = man.create_new_network(GAME)
+        network = man.load_network(GAME, MODEL_WHITE)
         man.save_network(network, MODEL_BLACK)
 
 def play(player_white, player_black, move_time=10):
