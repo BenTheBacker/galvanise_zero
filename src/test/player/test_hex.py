@@ -46,7 +46,7 @@ def setup():
 
 def play(player_white, player_black, move_time=10):
     """Play a game between two players and export the game data."""
-    gm = GameMaster(lookup.by_name(GAME), verbose=False)
+    gm = GameMaster(lookup.by_name(GAME_LABEL), verbose=False)
     gm.add_player(player_white, "white")
     gm.add_player(player_black, "black")
 
