@@ -1,0 +1,1966 @@
+{
+    "obj": {
+        "game": "hexLG13",
+        "log": [],
+        "players": [
+            {
+                "elo": 2852.9800475480624,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_280",
+                "played": 116
+            },
+            {
+                "elo": 2728.110868171158,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_305",
+                "played": 106
+            },
+            {
+                "elo": 2697.58274192442,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_310",
+                "played": 100
+            },
+            {
+                "elo": 2608.5639515964863,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_175",
+                "played": 155
+            },
+            {
+                "elo": 2601.705490879678,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_295",
+                "played": 108
+            },
+            {
+                "elo": 2599.633347712027,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_300",
+                "played": 110
+            },
+            {
+                "elo": 2584.6289835011366,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_200",
+                "played": 119
+            },
+            {
+                "elo": 2572.748487194837,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_285",
+                "played": 114
+            },
+            {
+                "elo": 2557.5870640475387,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_225",
+                "played": 104
+            },
+            {
+                "elo": 2546.2799841997316,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_290",
+                "played": 107
+            },
+            {
+                "elo": 2542.7913470336252,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_275",
+                "played": 142
+            },
+            {
+                "elo": 2537.020410969781,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_220",
+                "played": 131
+            },
+            {
+                "elo": 2524.7771771998177,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_210",
+                "played": 135
+            },
+            {
+                "elo": 2510.280799477649,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_176",
+                "played": 180
+            },
+            {
+                "elo": 2503.8932221429736,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_134",
+                "played": 304
+            },
+            {
+                "elo": 2495.6919848619036,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_188",
+                "played": 175
+            },
+            {
+                "elo": 2489.3376581577586,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_215",
+                "played": 123
+            },
+            {
+                "elo": 2477.279275714334,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_165",
+                "played": 141
+            },
+            {
+                "elo": 2471.9305683557836,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_209",
+                "played": 164
+            },
+            {
+                "elo": 2470.308251560815,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_203",
+                "played": 192
+            },
+            {
+                "elo": 2462.9542461595524,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_185",
+                "played": 130
+            },
+            {
+                "elo": 2459.3046950189114,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_480",
+                "played": 141
+            },
+            {
+                "elo": 2449.0486314059226,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_197",
+                "played": 181
+            },
+            {
+                "elo": 2448.726898781558,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_190",
+                "played": 130
+            },
+            {
+                "elo": 2444.605449979797,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_191",
+                "played": 180
+            },
+            {
+                "elo": 2439.0181041764545,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_277",
+                "played": 109
+            },
+            {
+                "elo": 2435.705431399733,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_200",
+                "played": 122
+            },
+            {
+                "elo": 2434.9524759405836,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_195",
+                "played": 128
+            },
+            {
+                "elo": 2427.794631650231,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_149",
+                "played": 223
+            },
+            {
+                "elo": 2424.5820383017626,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_180",
+                "played": 129
+            },
+            {
+                "elo": 2418.8674186147687,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_182",
+                "played": 186
+            },
+            {
+                "elo": 2414.0668482670085,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_265",
+                "played": 111
+            },
+            {
+                "elo": 2401.2701560769005,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_206",
+                "played": 104
+            },
+            {
+                "elo": 2396.372261642889,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_173",
+                "played": 206
+            },
+            {
+                "elo": 2393.8888532975006,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_470",
+                "played": 132
+            },
+            {
+                "elo": 2389.035730087283,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_155",
+                "played": 197
+            },
+            {
+                "elo": 2373.0419759777283,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_160",
+                "played": 125
+            },
+            {
+                "elo": 2361.3136327573047,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_465",
+                "played": 134
+            },
+            {
+                "elo": 2358.495188694263,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_179",
+                "played": 189
+            },
+            {
+                "elo": 2354.402608566402,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_212",
+                "played": 173
+            },
+            {
+                "elo": 2352.4341263265364,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_128",
+                "played": 252
+            },
+            {
+                "elo": 2350.624731960822,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_475",
+                "played": 122
+            },
+            {
+                "elo": 2350.2212284993643,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_455",
+                "played": 121
+            },
+            {
+                "elo": 2344.415660034478,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_194",
+                "played": 171
+            },
+            {
+                "elo": 2343.6903973576477,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_205",
+                "played": 109
+            },
+            {
+                "elo": 2330.138155447874,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_450",
+                "played": 125
+            },
+            {
+                "elo": 2325.324849687122,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_167",
+                "played": 183
+            },
+            {
+                "elo": 2316.6246040901333,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_131",
+                "played": 256
+            },
+            {
+                "elo": 2316.27224458515,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_440",
+                "played": 120
+            },
+            {
+                "elo": 2315.794392550054,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_125",
+                "played": 193
+            },
+            {
+                "elo": 2302.334706992183,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_143",
+                "played": 214
+            },
+            {
+                "elo": 2296.0768584706284,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_164",
+                "played": 195
+            },
+            {
+                "elo": 2291.827238958374,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_445",
+                "played": 128
+            },
+            {
+                "elo": 2288.146382404469,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_137",
+                "played": 206
+            },
+            {
+                "elo": 2285.4001386795567,
+                "fixed": false,
+                "name": "hex13_v3_800_b3_170",
+                "played": 111
+            },
+            {
+                "elo": 2284.7063093254847,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_330",
+                "played": 149
+            },
+            {
+                "elo": 2282.65086028632,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_430",
+                "played": 128
+            },
+            {
+                "elo": 2280.873625510759,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_185",
+                "played": 158
+            },
+            {
+                "elo": 2280.597294945287,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_161",
+                "played": 171
+            },
+            {
+                "elo": 2279.9913359773004,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_170",
+                "played": 197
+            },
+            {
+                "elo": 2279.436668993864,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_146",
+                "played": 223
+            },
+            {
+                "elo": 2277.7158001272956,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_139",
+                "played": 211
+            },
+            {
+                "elo": 2276.834902462657,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_460",
+                "played": 119
+            },
+            {
+                "elo": 2275.034442158736,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_122",
+                "played": 215
+            },
+            {
+                "elo": 2274.3267651222395,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_425",
+                "played": 120
+            },
+            {
+                "elo": 2270.541791273361,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_365",
+                "played": 128
+            },
+            {
+                "elo": 2255.3023421589332,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_152",
+                "played": 199
+            },
+            {
+                "elo": 2253.882957498473,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_158",
+                "played": 169
+            },
+            {
+                "elo": 2253.3158340685163,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_345",
+                "played": 144
+            },
+            {
+                "elo": 2253.0531045048456,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_390",
+                "played": 119
+            },
+            {
+                "elo": 2248.9115025196775,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_119",
+                "played": 224
+            },
+            {
+                "elo": 2238.6312996448282,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_140",
+                "played": 221
+            },
+            {
+                "elo": 2236.819948730288,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_350",
+                "played": 122
+            },
+            {
+                "elo": 2234.38609948899,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_230",
+                "played": 363
+            },
+            {
+                "elo": 2230.6235577483876,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_415",
+                "played": 115
+            },
+            {
+                "elo": 2228.263073831227,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_375",
+                "played": 117
+            },
+            {
+                "elo": 2227.921723073381,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_116",
+                "played": 241
+            },
+            {
+                "elo": 2217.367016448152,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_420",
+                "played": 118
+            },
+            {
+                "elo": 2213.2554639532077,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_300",
+                "played": 149
+            },
+            {
+                "elo": 2212.9045536638423,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_395",
+                "played": 115
+            },
+            {
+                "elo": 2196.9253068389316,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_112",
+                "played": 242
+            },
+            {
+                "elo": 2184.2881161987884,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_405",
+                "played": 115
+            },
+            {
+                "elo": 2179.9765877955565,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_380",
+                "played": 122
+            },
+            {
+                "elo": 2176.5072122493857,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_435",
+                "played": 113
+            },
+            {
+                "elo": 2173.403032897743,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_335",
+                "played": 141
+            },
+            {
+                "elo": 2142.022735296057,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_310",
+                "played": 150
+            },
+            {
+                "elo": 2138.4421103855884,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_113",
+                "played": 248
+            },
+            {
+                "elo": 2129.2144539277538,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_400",
+                "played": 120
+            },
+            {
+                "elo": 2119.9289986196586,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_285",
+                "played": 167
+            },
+            {
+                "elo": 2117.223143433605,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_355",
+                "played": 123
+            },
+            {
+                "elo": 2108.0776618423533,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_325",
+                "played": 140
+            },
+            {
+                "elo": 2101.54274514669,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_360",
+                "played": 121
+            },
+            {
+                "elo": 2089.907580060179,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_273",
+                "played": 324
+            },
+            {
+                "elo": 2087.4605298574957,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_235",
+                "played": 387
+            },
+            {
+                "elo": 2086.6504696433904,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_320",
+                "played": 148
+            },
+            {
+                "elo": 2077.4742874382796,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_248",
+                "played": 343
+            },
+            {
+                "elo": 2070.093544209148,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_410",
+                "played": 114
+            },
+            {
+                "elo": 2067.980836129132,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_370",
+                "played": 118
+            },
+            {
+                "elo": 2046.8314168306185,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_264",
+                "played": 211
+            },
+            {
+                "elo": 2043.7771109040214,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_279",
+                "played": 241
+            },
+            {
+                "elo": 2042.9166503478614,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_275",
+                "played": 132
+            },
+            {
+                "elo": 2042.1901956323165,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_385",
+                "played": 109
+            },
+            {
+                "elo": 2042.1690148482746,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_226",
+                "played": 353
+            },
+            {
+                "elo": 2025.1438086006433,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_275",
+                "played": 219
+            },
+            {
+                "elo": 2018.3854174966232,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_240",
+                "played": 126
+            },
+            {
+                "elo": 2018.2177968729486,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_261",
+                "played": 314
+            },
+            {
+                "elo": 2013.9028546735144,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_258",
+                "played": 336
+            },
+            {
+                "elo": 2012.928448246561,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_227",
+                "played": 378
+            },
+            {
+                "elo": 2005.6838343795823,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_267",
+                "played": 258
+            },
+            {
+                "elo": 2004.2144417872885,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_340",
+                "played": 122
+            },
+            {
+                "elo": 2003.743911185655,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_222",
+                "played": 260
+            },
+            {
+                "elo": 2003.6825684401688,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_280",
+                "played": 118
+            },
+            {
+                "elo": 2001.1467983952818,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_265",
+                "played": 133
+            },
+            {
+                "elo": 2000.5352333044334,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_255",
+                "played": 249
+            },
+            {
+                "elo": 2000.2866221912136,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_239",
+                "played": 372
+            },
+            {
+                "elo": 1997.3941994202569,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_315",
+                "played": 131
+            },
+            {
+                "elo": 1997.0604101135555,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_305",
+                "played": 121
+            },
+            {
+                "elo": 1995.2671719231005,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_242",
+                "played": 325
+            },
+            {
+                "elo": 1990.6596138987381,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_208",
+                "played": 412
+            },
+            {
+                "elo": 1987.5468554100883,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_209",
+                "played": 436
+            },
+            {
+                "elo": 1982.2691614072414,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_270",
+                "played": 298
+            },
+            {
+                "elo": 1977.6774258915716,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_473",
+                "played": 413
+            },
+            {
+                "elo": 1975.9816506159239,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_438",
+                "played": 521
+            },
+            {
+                "elo": 1967.047882501938,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_461",
+                "played": 422
+            },
+            {
+                "elo": 1965.7608275925372,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_295",
+                "played": 120
+            },
+            {
+                "elo": 1965.5465847002495,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_277",
+                "played": 263
+            },
+            {
+                "elo": 1965.2564516393256,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_270",
+                "played": 130
+            },
+            {
+                "elo": 1964.1232458775398,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_260",
+                "played": 137
+            },
+            {
+                "elo": 1963.3482704522778,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_245",
+                "played": 138
+            },
+            {
+                "elo": 1958.4841125255427,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_276",
+                "played": 239
+            },
+            {
+                "elo": 1958.0392023223487,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_252",
+                "played": 329
+            },
+            {
+                "elo": 1955.435841232499,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_216",
+                "played": 339
+            },
+            {
+                "elo": 1954.9376621820502,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_470",
+                "played": 454
+            },
+            {
+                "elo": 1951.9836928440225,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_229",
+                "played": 331
+            },
+            {
+                "elo": 1948.6076605259416,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_228",
+                "played": 197
+            },
+            {
+                "elo": 1939.8626552399226,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_225",
+                "played": 133
+            },
+            {
+                "elo": 1938.5230129480024,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_215",
+                "played": 129
+            },
+            {
+                "elo": 1929.920037659898,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_195",
+                "played": 125
+            },
+            {
+                "elo": 1927.2723188213747,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_442",
+                "played": 428
+            },
+            {
+                "elo": 1926.476153064953,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_250",
+                "played": 126
+            },
+            {
+                "elo": 1911.4446376502501,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_221",
+                "played": 347
+            },
+            {
+                "elo": 1906.2175149000275,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_220",
+                "played": 121
+            },
+            {
+                "elo": 1905.007009175091,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_175",
+                "played": 127
+            },
+            {
+                "elo": 1902.6036729049802,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_290",
+                "played": 125
+            },
+            {
+                "elo": 1902.1003362472698,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_201",
+                "played": 343
+            },
+            {
+                "elo": 1901.2292317901263,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_462",
+                "played": 474
+            },
+            {
+                "elo": 1893.699522443917,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_212",
+                "played": 381
+            },
+            {
+                "elo": 1879.030803827061,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_205",
+                "played": 122
+            },
+            {
+                "elo": 1870.2740734813297,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_352",
+                "played": 474
+            },
+            {
+                "elo": 1865.4331879699396,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_210",
+                "played": 120
+            },
+            {
+                "elo": 1862.7350769892057,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_420",
+                "played": 494
+            },
+            {
+                "elo": 1861.9166935495043,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_450",
+                "played": 500
+            },
+            {
+                "elo": 1860.1692165165662,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_458",
+                "played": 487
+            },
+            {
+                "elo": 1856.3052107127478,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_185",
+                "played": 127
+            },
+            {
+                "elo": 1852.7525154999964,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_205",
+                "played": 313
+            },
+            {
+                "elo": 1848.7162484540502,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_478",
+                "played": 427
+            },
+            {
+                "elo": 1848.1119691145077,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_231",
+                "played": 375
+            },
+            {
+                "elo": 1847.0583942233243,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_370",
+                "played": 501
+            },
+            {
+                "elo": 1843.40436224515,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_260",
+                "played": 102
+            },
+            {
+                "elo": 1841.520809889124,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_264",
+                "played": 104
+            },
+            {
+                "elo": 1841.2861599803668,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_230",
+                "played": 122
+            },
+            {
+                "elo": 1838.1118120656163,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_388",
+                "played": 494
+            },
+            {
+                "elo": 1821.1666351514593,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_170",
+                "played": 116
+            },
+            {
+                "elo": 1816.9098047492744,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_410",
+                "played": 480
+            },
+            {
+                "elo": 1802.327591135642,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_160",
+                "played": 120
+            },
+            {
+                "elo": 1789.5434575297338,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_471",
+                "played": 384
+            },
+            {
+                "elo": 1788.6545120024302,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_150",
+                "played": 122
+            },
+            {
+                "elo": 1781.0411817011054,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_468",
+                "played": 441
+            },
+            {
+                "elo": 1779.0810819313244,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_200",
+                "played": 122
+            },
+            {
+                "elo": 1773.8935193231732,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_235",
+                "played": 119
+            },
+            {
+                "elo": 1755.9407120247756,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_428",
+                "played": 427
+            },
+            {
+                "elo": 1752.7137724309812,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_390",
+                "played": 468
+            },
+            {
+                "elo": 1751.2496386399582,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_203",
+                "played": 338
+            },
+            {
+                "elo": 1750.6762107245706,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_255",
+                "played": 116
+            },
+            {
+                "elo": 1750.510072329046,
+                "fixed": false,
+                "name": "hex13_v3_800_c2_250",
+                "played": 264
+            },
+            {
+                "elo": 1749.340636743928,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_380",
+                "played": 471
+            },
+            {
+                "elo": 1746.6833684129654,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_190",
+                "played": 116
+            },
+            {
+                "elo": 1739.5761059044055,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_418",
+                "played": 131
+            },
+            {
+                "elo": 1731.4638195114107,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_165",
+                "played": 116
+            },
+            {
+                "elo": 1727.0187607810608,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_140",
+                "played": 122
+            },
+            {
+                "elo": 1726.5438985218705,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_180",
+                "played": 120
+            },
+            {
+                "elo": 1725.8345258004033,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_464",
+                "played": 459
+            },
+            {
+                "elo": 1725.7847489031537,
+                "fixed": false,
+                "name": "hex13_v3_800_d2_110",
+                "played": 174
+            },
+            {
+                "elo": 1707.998230949973,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_285",
+                "played": 479
+            },
+            {
+                "elo": 1702.9353968431374,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_135",
+                "played": 117
+            },
+            {
+                "elo": 1696.7933696197067,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_398",
+                "played": 116
+            },
+            {
+                "elo": 1689.8155962793942,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_155",
+                "played": 114
+            },
+            {
+                "elo": 1686.179241883964,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_413",
+                "played": 129
+            },
+            {
+                "elo": 1684.0819462071763,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_443",
+                "played": 121
+            },
+            {
+                "elo": 1683.730463755296,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_373",
+                "played": 120
+            },
+            {
+                "elo": 1672.7430175490647,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_423",
+                "played": 113
+            },
+            {
+                "elo": 1670.2792365752882,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_105",
+                "played": 114
+            },
+            {
+                "elo": 1666.2879134638601,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_338",
+                "played": 112
+            },
+            {
+                "elo": 1663.492508538991,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_145",
+                "played": 113
+            },
+            {
+                "elo": 1660.9785488012649,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_312",
+                "played": 485
+            },
+            {
+                "elo": 1660.9477122459755,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_378",
+                "played": 458
+            },
+            {
+                "elo": 1655.7787089905323,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_334",
+                "played": 450
+            },
+            {
+                "elo": 1654.5207071515806,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_130",
+                "played": 113
+            },
+            {
+                "elo": 1645.4892462546882,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_292",
+                "played": 512
+            },
+            {
+                "elo": 1643.4282356151539,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_398",
+                "played": 450
+            },
+            {
+                "elo": 1639.2152245872655,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_316",
+                "played": 451
+            },
+            {
+                "elo": 1638.2250107177676,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_383",
+                "played": 109
+            },
+            {
+                "elo": 1632.9281766089205,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_428",
+                "played": 111
+            },
+            {
+                "elo": 1631.1768118769621,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_110",
+                "played": 108
+            },
+            {
+                "elo": 1629.0566883399536,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_432",
+                "played": 427
+            },
+            {
+                "elo": 1626.0384966415575,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_309",
+                "played": 457
+            },
+            {
+                "elo": 1622.6406821860483,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_388",
+                "played": 117
+            },
+            {
+                "elo": 1621.163621279369,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_400",
+                "played": 444
+            },
+            {
+                "elo": 1614.0447603727503,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_378",
+                "played": 108
+            },
+            {
+                "elo": 1610.1583782099215,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_356",
+                "played": 460
+            },
+            {
+                "elo": 1606.59256924655,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_270",
+                "played": 465
+            },
+            {
+                "elo": 1603.0411464514148,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_403",
+                "played": 126
+            },
+            {
+                "elo": 1595.2979709857211,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_394",
+                "played": 493
+            },
+            {
+                "elo": 1591.9538843585578,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_358",
+                "played": 109
+            },
+            {
+                "elo": 1589.4418951601583,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_333",
+                "played": 109
+            },
+            {
+                "elo": 1585.9658687066471,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_368",
+                "played": 108
+            },
+            {
+                "elo": 1583.108174323309,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_438",
+                "played": 115
+            },
+            {
+                "elo": 1582.938307276479,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_366",
+                "played": 467
+            },
+            {
+                "elo": 1580.7738254465899,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_125",
+                "played": 107
+            },
+            {
+                "elo": 1577.172738232506,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_120",
+                "played": 110
+            },
+            {
+                "elo": 1572.9212140378072,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_288",
+                "played": 105
+            },
+            {
+                "elo": 1569.075792121932,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_353",
+                "played": 107
+            },
+            {
+                "elo": 1562.4838020564816,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_393",
+                "played": 112
+            },
+            {
+                "elo": 1557.1792404199402,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_303",
+                "played": 113
+            },
+            {
+                "elo": 1553.3044976756605,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_260",
+                "played": 463
+            },
+            {
+                "elo": 1551.8603843140156,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_115",
+                "played": 106
+            },
+            {
+                "elo": 1550.771848942774,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_360",
+                "played": 302
+            },
+            {
+                "elo": 1548.4948443826431,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_293",
+                "played": 111
+            },
+            {
+                "elo": 1548.129758302154,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_264",
+                "played": 486
+            },
+            {
+                "elo": 1538.725708499268,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_340",
+                "played": 326
+            },
+            {
+                "elo": 1538.087192608874,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_255",
+                "played": 426
+            },
+            {
+                "elo": 1535.0406991091097,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_448",
+                "played": 112
+            },
+            {
+                "elo": 1533.921507690465,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_298",
+                "played": 106
+            },
+            {
+                "elo": 1528.8144314456063,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_363",
+                "played": 111
+            },
+            {
+                "elo": 1526.251461513409,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_318",
+                "played": 110
+            },
+            {
+                "elo": 1521.1692031748776,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_288",
+                "played": 426
+            },
+            {
+                "elo": 1519.5417437215278,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_408",
+                "played": 115
+            },
+            {
+                "elo": 1515.9348395635454,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_343",
+                "played": 111
+            },
+            {
+                "elo": 1515.1711938042663,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_283",
+                "played": 108
+            },
+            {
+                "elo": 1512.4341869419025,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_278",
+                "played": 104
+            },
+            {
+                "elo": 1510.6072047479709,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_340",
+                "played": 461
+            },
+            {
+                "elo": 1509.726552997951,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_276",
+                "played": 435
+            },
+            {
+                "elo": 1493.8270504978398,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_235",
+                "played": 450
+            },
+            {
+                "elo": 1493.6518569232446,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_300",
+                "played": 308
+            },
+            {
+                "elo": 1487.7602514078953,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_313",
+                "played": 108
+            },
+            {
+                "elo": 1487.6337621812445,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_348",
+                "played": 116
+            },
+            {
+                "elo": 1485.1454060768353,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_320",
+                "played": 341
+            },
+            {
+                "elo": 1483.985644332327,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_268",
+                "played": 111
+            },
+            {
+                "elo": 1473.2752013207569,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_433",
+                "played": 111
+            },
+            {
+                "elo": 1472.473325402194,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_328",
+                "played": 108
+            },
+            {
+                "elo": 1466.2917483460521,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_253",
+                "played": 112
+            },
+            {
+                "elo": 1462.8042764305874,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_323",
+                "played": 106
+            },
+            {
+                "elo": 1459.9507708458493,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_263",
+                "played": 114
+            },
+            {
+                "elo": 1445.4403499665118,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_260",
+                "played": 342
+            },
+            {
+                "elo": 1442.2303671229333,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_233",
+                "played": 110
+            },
+            {
+                "elo": 1435.32448739518,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_308",
+                "played": 114
+            },
+            {
+                "elo": 1434.6309854677422,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_279",
+                "played": 473
+            },
+            {
+                "elo": 1422.9122367099685,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_273",
+                "played": 107
+            },
+            {
+                "elo": 1420.0657399325498,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_245",
+                "played": 496
+            },
+            {
+                "elo": 1393.8502162510292,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_248",
+                "played": 107
+            },
+            {
+                "elo": 1385.904862334006,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_203",
+                "played": 110
+            },
+            {
+                "elo": 1385.643931028322,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_243",
+                "played": 118
+            },
+            {
+                "elo": 1378.0267310879972,
+                "fixed": false,
+                "name": "hex13_v3_800_c1_261",
+                "played": 406
+            },
+            {
+                "elo": 1377.7466306367294,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_223",
+                "played": 105
+            },
+            {
+                "elo": 1375.1815301047043,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_258",
+                "played": 114
+            },
+            {
+                "elo": 1364.0070720616663,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_208",
+                "played": 108
+            },
+            {
+                "elo": 1360.6315383158624,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_238",
+                "played": 114
+            },
+            {
+                "elo": 1336.8551173842818,
+                "fixed": false,
+                "name": "hex13_v3_800_b4_256",
+                "played": 102
+            },
+            {
+                "elo": 1326.2877305842137,
+                "fixed": false,
+                "name": "hex13_v3_800_h2_280",
+                "played": 317
+            },
+            {
+                "elo": 1323.804511250823,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_188",
+                "played": 111
+            },
+            {
+                "elo": 1323.0563592451774,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_228",
+                "played": 119
+            },
+            {
+                "elo": 1306.9351525598313,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_213",
+                "played": 114
+            },
+            {
+                "elo": 1301.5359478836024,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_163",
+                "played": 105
+            },
+            {
+                "elo": 1300.4230234156469,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_229",
+                "played": 477
+            },
+            {
+                "elo": 1299.6374409073367,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_193",
+                "played": 107
+            },
+            {
+                "elo": 1292.3675669084305,
+                "fixed": false,
+                "name": "hex13_v3_800_b2_100",
+                "played": 116
+            },
+            {
+                "elo": 1274.1392130491538,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_198",
+                "played": 110
+            },
+            {
+                "elo": 1262.5020029177797,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_183",
+                "played": 108
+            },
+            {
+                "elo": 1252.7576019941612,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_218",
+                "played": 107
+            },
+            {
+                "elo": 1244.825616695993,
+                "fixed": false,
+                "name": "hex13_v3_800_best_252",
+                "played": 528
+            },
+            {
+                "elo": 1239.1767095020757,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_178",
+                "played": 104
+            },
+            {
+                "elo": 1221.0616917302877,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_173",
+                "played": 105
+            },
+            {
+                "elo": 1216.0158044555517,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_168",
+                "played": 105
+            },
+            {
+                "elo": 1214.938153976982,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_153",
+                "played": 107
+            },
+            {
+                "elo": 1200.40384480862,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_200",
+                "played": 355
+            },
+            {
+                "elo": 1178.7285829754182,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_150",
+                "played": 340
+            },
+            {
+                "elo": 1176.7803197200055,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_158",
+                "played": 102
+            },
+            {
+                "elo": 1174.721960788832,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_175",
+                "played": 487
+            },
+            {
+                "elo": 1174.5512887556913,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_148",
+                "played": 106
+            },
+            {
+                "elo": 1165.5894430949213,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_100",
+                "played": 248
+            },
+            {
+                "elo": 1140.7227370520627,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_143",
+                "played": 102
+            },
+            {
+                "elo": 1129.8354804627068,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_138",
+                "played": 105
+            },
+            {
+                "elo": 1129.8226023342954,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_128",
+                "played": 104
+            },
+            {
+                "elo": 1108.4665198350608,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_98",
+                "played": 102
+            },
+            {
+                "elo": 1102.73334549746,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_123",
+                "played": 106
+            },
+            {
+                "elo": 1091.6452739096424,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_125",
+                "played": 234
+            },
+            {
+                "elo": 1090.0804497066786,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_118",
+                "played": 105
+            },
+            {
+                "elo": 1085.0731099280224,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_133",
+                "played": 106
+            },
+            {
+                "elo": 1076.6070938457144,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_113",
+                "played": 106
+            },
+            {
+                "elo": 1019.4771451457456,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_103",
+                "played": 104
+            },
+            {
+                "elo": 1013.4831881142595,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_108",
+                "played": 110
+            },
+            {
+                "elo": 1010.7633871513452,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_93",
+                "played": 111
+            },
+            {
+                "elo": 973.0802675772691,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_83",
+                "played": 105
+            },
+            {
+                "elo": 965.821953668952,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_88",
+                "played": 108
+            },
+            {
+                "elo": 920.4075986366252,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_75",
+                "played": 215
+            },
+            {
+                "elo": 896.799396653835,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_73",
+                "played": 110
+            },
+            {
+                "elo": 880.8679049108622,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_78",
+                "played": 103
+            },
+            {
+                "elo": 804.6162484283177,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_50",
+                "played": 464
+            },
+            {
+                "elo": 794.488819000777,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_68",
+                "played": 134
+            },
+            {
+                "elo": 791.5299289632032,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_58",
+                "played": 122
+            },
+            {
+                "elo": 791.4605945770949,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_48",
+                "played": 142
+            },
+            {
+                "elo": 779.904207115972,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_63",
+                "played": 147
+            },
+            {
+                "elo": 758.4950987263153,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_38",
+                "played": 126
+            },
+            {
+                "elo": 747.721728553964,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_43",
+                "played": 119
+            },
+            {
+                "elo": 735.1427536860124,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_53",
+                "played": 137
+            },
+            {
+                "elo": 732.7432756283873,
+                "fixed": false,
+                "name": "hex13_v3_800_h1_25",
+                "played": 307
+            },
+            {
+                "elo": 702.4982484087313,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_33",
+                "played": 135
+            },
+            {
+                "elo": 665.6883035922256,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_28",
+                "played": 125
+            },
+            {
+                "elo": 633.3501351375681,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_23",
+                "played": 117
+            },
+            {
+                "elo": 599.4119569474159,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_18",
+                "played": 125
+            },
+            {
+                "elo": 507.84510757272744,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_13",
+                "played": 121
+            },
+            {
+                "elo": 500.0,
+                "fixed": true,
+                "name": "random",
+                "played": 231
+            },
+            {
+                "elo": 490.17510407852296,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_3",
+                "played": 121
+            },
+            {
+                "elo": 478.16009975296953,
+                "fixed": false,
+                "name": "simplemcts",
+                "played": 231
+            },
+            {
+                "elo": 354.8198130977622,
+                "fixed": false,
+                "name": "hex13_v3_800_b1_8",
+                "played": 107
+            }
+        ],
+        "players__clzlist__": [
+            "__main__",
+            "PlayerRating"
+        ]
+    },
+    "obj__clz__": [
+        "__main__",
+        "AllRatings"
+    ]
+}

@@ -22,5 +22,5 @@ bin/install
 
 # spurious stuff in my repo XXX
 src/scripts
-data
+#data
 confs/
