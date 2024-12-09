@@ -4,7 +4,7 @@ from ggplib.player.gamemaster import GameMaster
 from ggplib.db import lookup
 from ggplib.player import get
 from ggplib.util import log
-from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo to print the board
+from ggpzero.battle.hex import MatchInfo  # Import MatchInfo to print the board
 from ggpzero.defs import confs, templates
 from ggpzero.nn.manager import get_manager
 from ggpzero.player.puctplayer import PUCTPlayer
