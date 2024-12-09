@@ -47,6 +47,8 @@ class PUCTPlayer(MatchPlayer):
             gen = self.conf.generation
 
             self.nn = man.load_network(game_info.game, gen)
+            log.debug("NN Input Shape: {}".format(self.nn.get_model().input_shape))
+
             self.poller = PlayPoller(self.sm, self.nn, self.conf.evaluator_config)
 
             def get_noop_idx(actions):
