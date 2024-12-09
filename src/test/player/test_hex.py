@@ -11,7 +11,7 @@ from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo instead of print_b
 
 BOARD_SIZE = 11
 GAME = "hexLG11"
-GAME_LABEL = "hex_lg_11"  # Game to play
+
 MODEL_WHITE = "h1_141"  # Model for white player
 MODEL_BLACK = "b1_173"  # Model for black player
 
@@ -33,20 +33,10 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
-    man = get_manager()
-    #if not man.can_load(GAME, MODEL_WHITE):
-        #network = man.create_new_network(GAME)
-        #network = man.load_network(GAME, MODEL_WHITE)
-        #man.save_network(network, MODEL_WHITE)
-
-    #if not man.can_load(GAME, MODEL_BLACK):
-        #network = man.create_new_network(GAME)
-        #network = man.load_network(GAME, MODEL_WHITE)
-        #man.save_network(network, MODEL_BLACK)
 
 def play(player_white, player_black, move_time=10):
     """Play a game between two players and export the game data."""
-    gm = GameMaster(lookup.by_name(GAME_LABEL), verbose=False)
+    gm = GameMaster(lookup.by_name(GAME), verbose=False)
     gm.add_player(player_white, "white")
     gm.add_player(player_black, "black")
 
@@ -140,8 +130,8 @@ def play_b1_vs_h1():
     player_black = PUCTPlayer(puct_config_black)  # h1_141
 
     # Start the game
-    #play(player_white, player_black, MOVE_TIME)
-    play(simpleWhite, player_black, MOVE_TIME)
+    play(player_white, player_black, MOVE_TIME)
+    #play(simpleWhite, player_black, MOVE_TIME)
 
 if __name__ == "__main__":
     setup()
