@@ -104,16 +104,16 @@ class PollerBase(object):
         num_predictions = len(pred_array) / (t.num_channels * t.channel_size)
         assert num_predictions <= self.batch_size
 
-        log.debug("Transformer num_channels: %d, num_cols: %d, num_rows: %d", t.num_channels, t.num_cols, t.num_rows)
+        log.debug("Transformer num_channels: %d, num_cols: %d, num_rows: %d", (t.num_channels, t.num_cols, t.num_rows))
 
 
-        log.debug("Shape of pred_array before reshape: %s", pred_array.shape)
-        log.debug("Expected shape: (%d, %d, %d, %d)", num_predictions, t.num_channels, t.num_cols, t.num_rows)
+        log.debug("Shape of pred_array before reshape: %s", ( pred_array.shape))
+        log.debug("Expected shape: (%d, %d, %d, %d)", (num_predictions, t.num_channels, t.num_cols, t.num_rows))
         
         # make sure array is correct shape for keras/tensorflow (no memory is allocated)
         pred_array = pred_array.reshape(num_predictions, t.num_channels, t.num_cols, t.num_rows)
 
-        log.debug("Shape of pred_array after reshape: %s", pred_array.shape)
+        log.debug("Shape of pred_array after reshape: %s", (pred_array.shape))
 
 
         self.poll_last = self.nn.get_model().predict_on_batch(pred_array)
