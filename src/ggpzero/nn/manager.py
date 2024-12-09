@@ -65,6 +65,8 @@ class Manager(object):
         if generation_descr is None:
             generation_descr = templates.default_generation_desc(game)
 
+        log.debug("GenerationDescription: {}".format(vars(generation_descr)))
+
         assert isinstance(generation_descr, datadesc.GenerationDescription)
 
         desc = generation_descr
@@ -78,6 +80,9 @@ class Manager(object):
             transformer_clz = GdlBasesTransformer_Draws if generation_descr.draw_head else GdlBasesTransformer
             transformer = transformer_clz(game_info, generation_descr)
             self.transformers[key] = transformer
+
+        log.debug("Created transformer: num_channels={}, num_cols={}, num_rows={}".format(transformer.num_channels, transformer.num_cols, transformer.num_rows))
+
 
         return transformer
 
