@@ -12,8 +12,8 @@ from ggpzero.battle.hex2 import MatchInfo  # Import MatchInfo instead of print_b
 BOARD_SIZE = 11
 GAME = "hexLG11"
 GAME_LABEL = "hex_lg_11"  # Game to play
-MODEL_WHITE = "b1_173"  # Model for white player
-MODEL_BLACK = "h1_141"  # Model for black player
+MODEL_WHITE = "h1_141"  # Model for white player
+MODEL_BLACK = "b1_173"  # Model for black player
 
 MOVE_TIME = 10
 
