@@ -7,7 +7,7 @@ import numpy as np
 
 import ggpzero_interface
 from ggpzero.defs import confs, datadesc
-
+from ggplib.util import log
 
 def sm_to_ptr(sm):
     from ggplib.interface import ffi
@@ -74,8 +74,6 @@ class PollerBase(object):
         self.total_predictions = 0
         self.acc_time_polling = 0
         self.acc_time_prediction = 0
-
-    from ggplib.util import log
 
     def poll(self, do_stats=False):
         ''' POLL_AGAIN is returned, to indicate we need to call poll() again. '''
