@@ -8,6 +8,9 @@ from ggpzero.battle.hex import MatchInfo
 from ggpzero.defs import confs
 from ggpzero.player.puctplayer import PUCTPlayer
 
+import tensorflow as tf
+graph = tf.get_default_graph()
+
 # Constants
 BOARD_SIZE = 11
 GAME = "hexLG11"
@@ -120,24 +123,25 @@ def next_move():
 
     moves = ParseMoves(move_string)
 
-    # Apply the moves to the current state
-    lastMove = None
-    roles = gameMaster.sm.get_roles()
-    for i, move in enumerate(moves):
-        current_role = roles[i % len(roles)]
-        gameMaster.set_forced_move(current_role, move[1])
-        lastMove = gameMaster.play_single_move(lastMove)
-        gameMaster.clear_forced_move(current_role)
+    with graph.as_default():
+        # Apply the moves to the current state
+        lastMove = None
+        roles = gameMaster.sm.get_roles()
+        for i, move in enumerate(moves):
+            current_role = roles[i % len(roles)]
+            gameMaster.set_forced_move(current_role, move[1])
+            lastMove = gameMaster.play_single_move(lastMove)
+            gameMaster.clear_forced_move(current_role)
 
-    # Optionally print board
-    if displayBoard:
-        matchInfo.print_board(gameMaster.sm)
+        # Optionally print board
+        if displayBoard:
+            matchInfo.print_board(gameMaster.sm)
 
-    # Get the next move
-    nextMove = gameMaster.play_single_move(lastMove)
+        # Get the next move
+        nextMove = gameMaster.play_single_move(lastMove)
 
-    if displayBoard:
-        matchInfo.print_board(gameMaster.sm)
+        if displayBoard:
+            matchInfo.print_board(gameMaster.sm)
 
     return jsonify({"move": str(nextMove)})
 
