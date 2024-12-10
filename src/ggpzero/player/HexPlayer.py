@@ -177,6 +177,12 @@ def reset_game():
 
     return jsonify({"status": "game reset"})
 
+def reset_match():
+    # This function resets the match state to the initial position.
+    with graph.as_default():
+        gameMaster.reset()
+
+    return jsonify({"status": "match reset"})
 
 if __name__ == "__main__":
     setup()
