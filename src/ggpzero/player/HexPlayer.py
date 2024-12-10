@@ -149,7 +149,9 @@ def next_move():
 @app.route('/reset', methods=['POST'])
 def reset_game():
     # This endpoint resets the game state to the initial position.
-    initialize_game(DEFAULT_DISPLAY_BOARD, DEFAULT_DISPLAY_LOGS, DEFAULT_MOVE_TIME)
+    with graph.as_default():
+        initialize_game(DEFAULT_DISPLAY_BOARD, DEFAULT_DISPLAY_LOGS, DEFAULT_MOVE_TIME)
+        
     return jsonify({"status": "game reset"})
 
 
