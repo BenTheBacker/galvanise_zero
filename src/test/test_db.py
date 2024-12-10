@@ -21,6 +21,9 @@ def main():
     for name in sorted(game_names):
         print ("- {}".format(name))
 
+    game = lookup.by_name("hexLG11")
+    print(game)
+
 
 if __name__ == "__main__":
     main()
