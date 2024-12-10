@@ -8,6 +8,8 @@ from ggpzero.battle.hex import MatchInfo
 from ggpzero.defs import confs
 from ggpzero.player.puctplayer import PUCTPlayer
 
+from ggplib.util import log
+
 import tensorflow as tf
 graph = tf.get_default_graph()
 
@@ -113,7 +115,10 @@ def initialize_game(displayBoard=DEFAULT_DISPLAY_BOARD, displayLogs=DEFAULT_DISP
 @app.route('/next_move', methods=['POST'])
 def next_move():
     data = request.get_json()
+    log.debug("Received data: %s" % data)
+
     if data is None or "moves" not in data:
+        log.debug("No moves provided in request data.")
         return jsonify({"error": "No moves provided"}), 400
 
     move_string = data["moves"]
@@ -121,26 +126,44 @@ def next_move():
     displayLogs = data.get("displayLogs", DEFAULT_DISPLAY_LOGS)
     moveTime = float(data.get("moveTime", DEFAULT_MOVE_TIME))
 
+    log.debug("Parsed request: moves=%s, displayBoard=%s, displayLogs=%s, moveTime=%s" %
+              (move_string, displayBoard, displayLogs, moveTime))
+
     moves = ParseMoves(move_string)
+    log.debug("Parsed moves: %s" % (moves,))
 
     with graph.as_default():
-        # Apply the moves to the current state
         lastMove = None
         roles = gameMaster.sm.get_roles()
+        log.debug("Current roles: %s" % (roles,))
+
         for i, move in enumerate(moves):
             current_role = roles[i % len(roles)]
+            log.debug("Applying move %s for role %s" % (move, current_role))
             gameMaster.set_forced_move(current_role, move[1])
+
+            # Log whether the game is terminal before the move
+            log.debug("Before move: terminal=%s" % gameMaster.finished())
+
             lastMove = gameMaster.play_single_move(lastMove)
+            # Log whether the game is terminal after the move
+            log.debug("After move: terminal=%s" % gameMaster.finished())
+
             gameMaster.clear_forced_move(current_role)
 
-        # Optionally print board
         if displayBoard:
-            matchInfo.print_board(gameMaster.sm)
-
-        # Get the next move
+            log.debug("Current board after applying moves:")
+            matchInfo.print_board(gameMaster.sm)  # This prints to stdout, not the log
+            
+        # Now attempt to get the next move
+        log.debug("Attempting to get next move.")
+        log.debug("Before next move: terminal=%s" % gameMaster.finished())
         nextMove = gameMaster.play_single_move(lastMove)
+        log.debug("Next move obtained: %s" % (nextMove,))
+        log.debug("After next move: terminal=%s" % gameMaster.finished())
 
         if displayBoard:
+            log.debug("Current board after next move:")
             matchInfo.print_board(gameMaster.sm)
 
     return jsonify({"move": str(nextMove)})
@@ -151,7 +174,7 @@ def reset_game():
     # This endpoint resets the game state to the initial position.
     with graph.as_default():
         initialize_game(DEFAULT_DISPLAY_BOARD, DEFAULT_DISPLAY_LOGS, DEFAULT_MOVE_TIME)
-        
+
     return jsonify({"status": "game reset"})
 
 
