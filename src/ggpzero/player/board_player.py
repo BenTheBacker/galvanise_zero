@@ -25,13 +25,16 @@ def TranslateByteToMove(byte):
         # Special move
         x = 99
         y = 'z'
+
+        return  ('noop', 'swap')
     else:
         x = (num // 11) + 1
         y_index = num % 11
         if y_index == 0:
             y_index = 11  # Adjust for zero-based indexing
         y = chr(ord('a') + y_index - 1)  # Convert back to character
-    return (x, y)
+
+        return ('noop', '(place ' + y + ' ' + x + ')')
 
 def DecodeBoard(boardBytes):
     moves = []
