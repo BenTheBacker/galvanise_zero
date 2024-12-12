@@ -26,7 +26,7 @@ def TranslateByteToMove(byte):
         x = 99
         y = 'z'
 
-        return  ('noop', 'swap')
+        #return  ('noop', 'swap')
     else:
         x = (num // 11) + 1
         y_index = num % 11
@@ -34,7 +34,9 @@ def TranslateByteToMove(byte):
             y_index = 11  # Adjust for zero-based indexing
         y = chr(ord('a') + y_index - 1)  # Convert back to character
 
-        return ('noop', '(place ' + (str)(y) + ' ' + (str)(x) + ')')
+        #return ('noop', '(place ' + (str)(y) + ' ' + (str)(x) + ')')
+    
+    return x, y
 
 def DecodeBoard(boardBytes):
     moves = []
@@ -87,6 +89,11 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
         current_role = role_order[i % len(role_order)]
 
         # Set the forced move for the current role
+        if move[1][0] == '99':
+            move = ('noop', 'swap')
+        else:
+            move = ('noop', '(place ' + move[1][1] + ' ' + move[1][0] + ')')
+
         gameMaster.set_forced_move(current_role, move[1])
 
         if gameMaster.verbose:
@@ -169,17 +176,23 @@ def setup():
     np.set_printoptions(threshold=100000)
 
 if __name__ == "__main__":
+    outputFile = "data//boardsTurn2Solved.bin"
     # Ensure setup is called
     setup()
 
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
-    for i in range(1, 5):
-        moves = LoadBoardsFromFile("data//boardsTurn2.bin", 2)[0]
+    boards = LoadBoardsFromFile("data//boardsTurn2.bin", 2)
+    with open(outputFile, 'a') as output_file:
+        for moves in boards:
+            player1, player2 = GetModels(False)
+            move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
+                
+            outputStr= moves + ':' + move + '\n'
+            output_file.write(outputStr)
 
-        player1, player2 = GetModels(False)
-        move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
-            
-        print("Next Move:", move)
+            print(outputStr)
+
+    
 
     
