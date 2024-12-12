@@ -189,7 +189,7 @@ if __name__ == "__main__":
             move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
                 
             movesStr = ', '.join(['({}, {})'.format(m[0], m[1]) for m in moves])
-            outputStr= movesStr + ':' + move + '\n'
+            outputStr= movesStr + ':' + str(move) + '\n'
             output_file.write(outputStr)
 
             print(outputStr)
