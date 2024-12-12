@@ -168,19 +168,18 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
-
 if __name__ == "__main__":
     # Ensure setup is called
     setup()
 
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
-    moves = LoadBoardsFromFile("data//boardsTurn2.bin", 2)[0]
+    for i in range(1, 5):
+        moves = LoadBoardsFromFile("data//boardsTurn2.bin", 2)[0]
 
-    #print("Moves: ", moves)
+        player1, player2 = GetModels(False)
+        move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
+            
+        print("Next Move:", move)
 
-    # Reconstruct and display the game state
-    player1, player2 = GetModels(False)
-    move = GetNextMove(player1, player2, moves, 10, displayBoard=False)
-        
-    print("Next Move:", move)
+    
