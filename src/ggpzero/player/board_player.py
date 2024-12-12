@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
-    moves = LoadBoardsFromFile("data//boardsTurn2.bin", 2)[0]
+    moves = LoadBoardsFromFile("galvanise_zero//data//boardsTurn2.bin", 2)[0]
 
     #print("Moves: ", moves)
 
