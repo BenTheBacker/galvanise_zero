@@ -89,10 +89,10 @@ def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOAR
         current_role = role_order[i % len(role_order)]
 
         # Set the forced move for the current role
-        if move[1][0] == '99':
+        if move[0] == 99:
             move = ('noop', 'swap')
         else:
-            move = ('noop', '(place ' + move[1][1] + ' ' + move[1][0] + ')')
+            move = ('noop', '(place ' + (str)(move[1]) + ' ' + (str)(move[0]) + ')')
 
         gameMaster.set_forced_move(current_role, move[1])
 
