@@ -188,7 +188,8 @@ if __name__ == "__main__":
             player1, player2 = GetModels(False)
             move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
                 
-            outputStr= moves + ':' + move + '\n'
+            movesStr = ', '.join(['({}, {})'.format(m[0], m[1]) for m in moves])
+            outputStr= movesStr + ':' + move + '\n'
             output_file.write(outputStr)
 
             print(outputStr)
