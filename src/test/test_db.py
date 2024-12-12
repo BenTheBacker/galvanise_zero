@@ -3,6 +3,7 @@ from ggplib.db import lookup
 import sys
 import traceback
 
+import pickle
 
 def main():
     lookup.the_database = None

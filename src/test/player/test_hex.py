@@ -52,18 +52,18 @@ def play(player_white, player_black, move_time=MOVE_TIME):
         match_info.print_board(gm.sm) 
         move = gm.play_single_move(last_move=move) 
 
-        # player = None
-        # movement = None
+        player = None
+        movement = None
 
-        # if move is not None:
-        #     if move[0] == 'noop':
-        #         player = "white"
-        #         movement = move[1]
-        #     else:
-        #         player = "black"
-        #         movement = move[0]
+        if move is not None:
+            if move[0] == 'noop':
+                player = "white"
+                movement = move[1]
+            else:
+                player = "black"
+                movement = move[0]
 
-        # print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
+        print("Player:  "+ (str)(player) +", Movement: " +(str)(movement))
         # print(type(movement))
         # print(dir(movement))
 
