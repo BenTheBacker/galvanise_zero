@@ -8,7 +8,7 @@ import keras.callbacks as keras_callbacks
 from keras import metrics as keras_metrics
 import keras.backend as K
 
-
+from keras import models as keras_models
 from keras import layers as keras_layers
 from keras import regularizers as keras_regularizers
 
