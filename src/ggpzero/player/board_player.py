@@ -221,7 +221,11 @@ if __name__ == "__main__":
             
             # Get the models and determine the next move
             player1, player2 = GetModels(False)
-            move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
+            try:
+                move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
+            except:
+                print("Error processing {}/{}: {}".format(index, total_boards, movesStr))
+                continue
                 
             # Prepare the output string
             outputStr = "{0}:{1}\n".format(movesStr, move)
