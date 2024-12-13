@@ -186,23 +186,52 @@ if __name__ == "__main__":
     # Ensure setup is called
     setup()
 
-    # Parse the move string into a list of moves
-    #print("Move string: ", move_string) 
+    # Load boards from the input file
     boards = LoadBoardsFromFile(inputFile, 1)
-    with open(outputFile, 'a') as output_file:
-        i = 0
+    total_boards = len(boards)
 
-        for moves in boards:
-            i += 1
+    # Read existing movesStr from the output file into a set
+    existing_moves = set()
+    try:
+        with open(outputFile, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    moves_part = line.split(':')[0]
+                    existing_moves.add(moves_part)
+    except FileNotFoundError:
+        # If the output file doesn't exist, proceed without existing moves
+        pass
+
+    with open(outputFile, 'a') as output_file:
+        processed_count = 0  # Counter for processed (written) boards
+        for index, moves in enumerate(boards, start=1):
+            # Convert the current moves list to a string
+            movesStr = ', '.join(['({}, {})'.format(m[0], m[1]) for m in moves])
+            
+            # Check if this movesStr is already in the output file
+            if movesStr in existing_moves:
+                print(f"Skipping {index}/{total_boards}: {movesStr} already exists.")
+                continue  # Skip to the next board
+            
+            # Get the models and determine the next move
             player1, player2 = GetModels(False)
             move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
                 
-            movesStr = ', '.join(['({}, {})'.format(m[0], m[1]) for m in moves])
-            outputStr= movesStr + ':' + str(move) + '\n'
+            # Prepare the output string
+            outputStr = f"{movesStr}:{move}\n"
+            
+            # Write the new move to the output file
             output_file.write(outputStr)
-
-            print(str(i) + '/' + str(len(boards)) + ' ' + outputStr)
-
+            
+            # Add the new movesStr to the set to avoid future duplicates
+            existing_moves.add(movesStr)
+            
+            # Increment the processed counter
+            processed_count += 1
+            
+            # Print the progress
+            print(f"{processed_count}/{total_boards} {outputStr}")
 
     
 
