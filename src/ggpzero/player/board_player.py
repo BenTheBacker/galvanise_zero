@@ -181,8 +181,8 @@ def setup():
 
 
 if __name__ == "__main__":
-    inputFile = "data//boardsTurn1.bin"
-    outputFile = "data//boardsTurn1Solved.bin"
+    inputFile = "data//boardsTurn2.bin"
+    outputFile = "data//boardsTurn2Solved.bin"
 
     turns = 1
 
