@@ -12,6 +12,8 @@ from ggpzero.defs import confs, templates
 from ggpzero.nn.manager import get_manager
 from ggpzero.player.puctplayer import PUCTPlayer
 
+from __future__ import print_function  # Allows using print() as a function in Python 2.7
+
 BOARD_SIZE = 11
 GAME = "hexLG11"
 MODEL = "b1_173"
@@ -177,8 +179,6 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
-from __future__ import print_function  # Allows using print() as a function in Python 2.7
-import sys
 
 if __name__ == "__main__":
     inputFile = "data//boardsTurn1.bin"
