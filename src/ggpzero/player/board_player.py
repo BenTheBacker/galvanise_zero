@@ -17,26 +17,28 @@ GAME = "hexLG11"
 MODEL = "b1_173"
 
 
-def TranslateByteToMove(byte):
+def TranslateByteToMove(byte): 
+    # Extract the isVertical flag (bit 7)
     isVertical = bool((byte >> 7) & 0x01)
-    num = byte & 0x7F  # 0x7F = 01111111
+    
+    # Extract the num value (bits 0-6)
+    num = byte & 0x7F  # 0x7F is 01111111 in binary
     
     if num == 0:
-        # Special move
+        # Special case where x is 99
         x = 99
-        y = 'z'
-
-        #return  ('noop', 'swap')
+        y = 'z'  # You can choose a default or placeholder
     else:
-        x = (num // 11) + 1
-        y_index = num % 11
-        if y_index == 0:
-            y_index = 11  # Adjust for zero-based indexing
-        y = chr(ord('a') + y_index - 1)  # Convert back to character
-
-        #return ('noop', '(place ' + (str)(y) + ' ' + (str)(x) + ')')
+        # Reverse the calculation num = (x - 1) * 11 + y
+        x = (num - 1) // 11 + 1
+        y_num = (num - 1) % 11 + 1
+        
+        # Convert y_num back to a character
+        y = chr(ord('a') + y_num - 1)
     
-    return x, y
+    move = (x, y)
+    
+    return isVertical, move
 
 def DecodeBoard(boardBytes):
     moves = []
