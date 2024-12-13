@@ -44,7 +44,7 @@ def DecodeBoard(boardBytes):
     moves = []
     for byte in boardBytes:
         byte_val = ord(byte)  # Convert single character to integer
-        move = TranslateByteToMove(byte_val)
+        _, move = TranslateByteToMove(byte_val)
         moves.append(move)
     return moves
 
