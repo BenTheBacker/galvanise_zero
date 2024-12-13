@@ -236,7 +236,7 @@ if __name__ == "__main__":
             processed_count += 1
             
             # Print the progress
-            print("{0}/{1} {2}".format(processed_count, total_boards, outputStr))
+            print("{0}/{1} {2}".format(index, total_boards, outputStr))
     
 
     
