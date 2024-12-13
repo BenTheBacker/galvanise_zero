@@ -63,7 +63,7 @@ def LoadBoardsFromFile(filename, movesPlayed):
             decoded_board = DecodeBoard(board)
             boards.append(decoded_board)
     
-    print "Successfully loaded {} boards from '{}'.".format(len(boards), filename)
+    #print "Successfully loaded {} boards from '{}'.".format(len(boards), filename)
     return boards
 
 def GetNextMove(player_white, player_black, moves, moveTime = 5, board_size=BOARD_SIZE, displayBoard = False):
