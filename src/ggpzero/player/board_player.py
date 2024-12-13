@@ -1,4 +1,6 @@
-import sys
+
+from __future__ import print_function  # Allows using print() as a function in Python 2.7
+
 
 # Decoding Functions
 import os
@@ -11,8 +13,6 @@ from ggpzero.battle.hex import MatchInfo  # Import MatchInfo to print the board
 from ggpzero.defs import confs, templates
 from ggpzero.nn.manager import get_manager
 from ggpzero.player.puctplayer import PUCTPlayer
-
-from __future__ import print_function  # Allows using print() as a function in Python 2.7
 
 BOARD_SIZE = 11
 GAME = "hexLG11"
