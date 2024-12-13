@@ -177,6 +177,9 @@ def setup():
     import numpy as np
     np.set_printoptions(threshold=100000)
 
+from __future__ import print_function  # Allows using print() as a function in Python 2.7
+import sys
+
 if __name__ == "__main__":
     inputFile = "data//boardsTurn1.bin"
     outputFile = "data//boardsTurn1Solved.bin"
@@ -199,19 +202,21 @@ if __name__ == "__main__":
                 if line:
                     moves_part = line.split(':')[0]
                     existing_moves.add(moves_part)
-    except FileNotFoundError:
+    except IOError:
         # If the output file doesn't exist, proceed without existing moves
         pass
 
     with open(outputFile, 'a') as output_file:
         processed_count = 0  # Counter for processed (written) boards
-        for index, moves in enumerate(boards, start=1):
+        for index, moves in enumerate(boards):
+            index += 1  # Manually increment index to start from 1
+            
             # Convert the current moves list to a string
             movesStr = ', '.join(['({}, {})'.format(m[0], m[1]) for m in moves])
             
             # Check if this movesStr is already in the output file
             if movesStr in existing_moves:
-                print(f"Skipping {index}/{total_boards}: {movesStr} already exists.")
+                print("Skipping {}/{}: {} already exists.".format(index, total_boards, movesStr))
                 continue  # Skip to the next board
             
             # Get the models and determine the next move
@@ -219,7 +224,7 @@ if __name__ == "__main__":
             move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
                 
             # Prepare the output string
-            outputStr = f"{movesStr}:{move}\n"
+            outputStr = "{0}:{1}\n".format(movesStr, move)
             
             # Write the new move to the output file
             output_file.write(outputStr)
@@ -231,8 +236,7 @@ if __name__ == "__main__":
             processed_count += 1
             
             # Print the progress
-            print(f"{processed_count}/{total_boards} {outputStr}")
-
+            print("{0}/{1} {2}".format(processed_count, total_boards, outputStr))
     
 
     
