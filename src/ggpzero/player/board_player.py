@@ -178,15 +178,22 @@ def setup():
     np.set_printoptions(threshold=100000)
 
 if __name__ == "__main__":
-    outputFile = "data//boardsTurn2Solved.bin"
+    inputFile = "data//boardsTurn1.bin"
+    outputFile = "data//boardsTurn1Solved.bin"
+
+    turns = 1
+
     # Ensure setup is called
     setup()
 
     # Parse the move string into a list of moves
     #print("Move string: ", move_string) 
-    boards = LoadBoardsFromFile("data//boardsTurn2.bin", 2)
+    boards = LoadBoardsFromFile(inputFile, 1)
     with open(outputFile, 'a') as output_file:
+        i = 0
+
         for moves in boards:
+            i += 1
             player1, player2 = GetModels(False)
             move = GetNextMove(player1, player2, moves, 10, displayBoard=True)
                 
@@ -194,7 +201,8 @@ if __name__ == "__main__":
             outputStr= movesStr + ':' + str(move) + '\n'
             output_file.write(outputStr)
 
-            print(outputStr)
+            print(str(i) + '/' + str(len(boards)) + ' ' + outputStr)
+
 
     
 
